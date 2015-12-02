@@ -1,36 +1,111 @@
+<!--Sorry I used really obnoxious colors guys I just wanted you to be able to see the different divs-->
+
 <!DOCTYPE html>
-<html ng-app="myApp">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gamers</title>
-    
-    <!-- Libraries -->
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Gamers</title>
+	    
+	    <!-- Libraries -->
+	    <script src="https://code.jquery.com/jquery.min.js"></script>
+	    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
 
-    <!-- Add ui-router library here -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-    <!-- Custom code -->
-    <script src="js/main.js"></script>
-    <link href = "css/main.css" rel="stylesheet" type = "text/css"/>
-    
-  </head>
-  <body>
-    <header>
+	    <!-- Add ui-router library here -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+	    <!-- Custom code -->
+	    <script src="js/main.js"></script>
+	    <link href = "css/main.css" rel="stylesheet" type = "text/css"/>
+	    
+	  </head>
 
-		</header>
+	<body>
+		<div id="head">Login / Register</div>
 
-	   <div class="container">
+		<div id="nav">
+			<a href="/" class="nav">Home</a> 
+			<a href="/forum.html" class="nav">Forum</a> 
+			<a href="/calendar.html" class="nav">Calendar</a> 
+			<a href="" class="nav">GAMERS</a>
+		</div>
 
-	    	<div ui-view></div>
-	   </div>
+		<div id="main">
+			<div id="left">
+				<h1>General</h1>
+				<p>
+					<strong>Hi Hello</strong><br />
+					<a href="" class="sidebar">WOOHOO</a><br />
+					<a href="" class="sidebar">WOOHOO</a>
+				</p>
 
-	  <footer>
+				<p>
+					<strong>Other Stuff?????</strong><br />
+					<a href="" class="sidebar">idk</a><br />
+					<a href="" class="sidebar">omg</a><br />
+					<a href="" class="sidebar">lol</a>
 
-	  </footer>
-  </body>
+				<h1>Games</h1>
+				<p>
+					<strong>I like to play games</strong><br />
+					<a href="" class="sidebar">ayeeee</a><br />
+					<a href="" class="sidebar">ayeeee</a>
+				</p>
+
+				<h1>Other</h1>
+				<p>
+					<strong>I like other stuff</strong><br />
+					<a href="" class="sidebar">poopy</a><br />
+					<a href="" class="sidebar">doodoo</a>
+				</p>
+			</div>
+
+			<div id="center">
+				<h1>Featured stuff????</h1>
+				<p>
+					Me har har
+				</p>
+			</div>
+
+			<div id="right">
+				<p>
+					Next Event
+				</p>
+
+				<p>
+					idk if you guys wanted this to have its own header too
+				</p>
+
+				<h1>Events</h1>
+				<ul>
+					<li><strong>What's cookin good lookin</strong>
+						<ul>
+							<li>happenin' today</li>
+							<li>and always</li>
+						</ul>
+					</li>
+					<li><strong>October 11</strong>
+						<ul>
+							<li>sherry's bday</li>
+							<li>really cool day</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h1>Chat?</h1>
+				<p>
+					Chat stuff
+				</p>
+			</div>
+		</div>
+
+		<div id="footer">
+			<p>
+				There is a footer here<br />
+				Yo yo yo yo embryo &copy; 2015
+			</p>
+		</div>
+	</body>
 </html>
