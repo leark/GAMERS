@@ -1,0 +1,99 @@
+/* Feel free to change whatever sry if anything is ugly~ */
+
+body{
+	font-family: Arial;
+	font-size: 11px;
+	margin: 0px;
+}
+
+h1 {
+	background-color: black;
+	color: white;
+	margin: 0px;
+	text-align: center;
+}
+
+p {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+strong {
+	font-size: 12px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 15px;
+}
+
+.nav {
+	color: white;
+	display: inline-block;
+	font-size: 24px;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.nav:hover {
+	background-color: black;
+	color: white;
+	text-decoration: none;
+}
+
+.sidebar {
+	color: black;
+	text-decoration: none;
+}
+
+.sidebar:hover {
+	text-decoration: underline;
+}
+
+#center {
+	background-color: green;
+	width: 764px;
+}
+
+#center, #left {
+	float: left;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+#footer {
+	clear: both;
+	text-align: center;
+}
+
+#head {
+	background-color: red;
+	height: 135px;
+	margin-bottom: 5px;
+}
+
+#footer, #head, #main, #nav {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1214px;
+}
+
+#left {
+	background-color: yellow;
+	width: 219px;
+}
+
+#nav {
+	background-color: orange;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+#right {
+	background-color: blue;
+	display: inline-block;
+	margin-bottom: 5px;
+	width: 219px;
+}
