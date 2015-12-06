@@ -4,6 +4,7 @@ body{
 	font-family: Arial;
 	font-size: 11px;
 	margin: 0px;
+	color:white;
 }
 
 h1 {
@@ -27,6 +28,10 @@ ul {
 	padding-left: 15px;
 }
 
+a {
+	color:white;
+}
+
 .nav {
 	color: white;
 	display: inline-block;
@@ -44,7 +49,7 @@ ul {
 }
 
 .sidebar {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
@@ -69,30 +74,31 @@ ul {
 }
 
 #head {
-	background-color: red;
+	background-color: #292929;
 	height: 135px;
 	margin-bottom: 5px;
 }
 
 #footer, #head, #main, #nav {
+	background-color: #292929;
 	margin-left: auto;
 	margin-right: auto;
 	width: 1214px;
 }
 
 #left {
-	background-color: yellow;
+	background-color: #292929;
 	width: 219px;
 }
 
 #nav {
-	background-color: orange;
+	background-color: #292929;
 	margin-bottom: 5px;
 	text-align: center;
 }
 
 #right {
-	background-color: blue;
+	background-color: #292929;
 	display: inline-block;
 	margin-bottom: 5px;
 	width: 219px;

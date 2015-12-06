@@ -25,7 +25,6 @@
 	<body>
 	<div ng-app="myApp" ng-controller="myCtrl">
 		<div id="head">Login / Register</div>
-
 		<div id="nav">
 			<a href="/" class="nav">Home</a> 
 			<a href="/forum.html" class="nav">Forum</a> 
@@ -38,27 +37,27 @@
 				<h1>General</h1>
 				<p>
 					<strong>Hi Hello</strong><br />
-					<a href="" class="sidebar" ng-repeat="">WOOHOO</a><br />
+					<a href="" class="sidebar" ng-repeat="general in generals">WOOHOO</a><br />
 					<a href="" class="sidebar">WOOHOO</a>
 				</p>
 
 				<p>
 					<strong>Other Stuff?????</strong><br />
-					<a href="" class="sidebar" ng-repeat="">idk</a><br />
+					<a href="" class="sidebar" ng-repeat="stuff in stuffs">idk</a><br />
 					<a href="" class="sidebar">omg</a><br />
 					<a href="" class="sidebar">lol</a>
 
 				<h1>Games</h1>
 				<p>
 					<strong>I like to play games</strong><br />
-					<a href="" class="sidebar" ng-repeat="">ayeeee</a><br />
+					<a href="" class="sidebar" ng-repeat="game in games">ayeeee</a><br />
 					<a href="" class="sidebar">ayeeee</a>
 				</p>
 
 				<h1>Other</h1>
 				<p>
 					<strong>I like other stuff</strong><br />
-					<a href="" class="sidebar" ng-repeat="">poopy</a><br />
+					<a href="" class="sidebar" ng-repeat="other in others">poopy</a><br />
 					<a href="" class="sidebar">doodoo</a>
 				</p>
 			</div>
@@ -83,7 +82,7 @@
 				<ul>
 					<li><strong>What's cookin good lookin</strong>
 						<ul>
-							<li>happenin' today</li>
+							<li ng-repeat="event in events">happenin' today</li>
 							<li>and always</li>
 						</ul>
 					</li>
@@ -91,6 +90,7 @@
 						<ul>
 							<li>sherry's bday</li>
 							<li>really cool day</li>
+							<li>dessert time ;)</li>
 						</ul>
 					</li>
 				</ul>
