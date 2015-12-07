@@ -1,10 +1,9 @@
-/* Feel free to change whatever sry if anything is ugly~ */
-
 body{
 	font-family: Arial;
 	font-size: 11px;
 	margin: 0px;
 	background-image: "img/letmelivedeepwhileilive.jpg";
+	color:white;
 }
 
 h1 {
@@ -28,6 +27,10 @@ ul {
 	padding-left: 15px;
 }
 
+a {
+	color:white;
+}
+
 .nav {
 	color: white;
 	display: inline-block;
@@ -45,7 +48,7 @@ ul {
 }
 
 .sidebar {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
@@ -54,8 +57,14 @@ ul {
 }
 
 #center {
-	background-color: green;
+	display: inline-block;
+	margin-top: 0px;
+	position: relative;
 	width: 764px;
+}
+
+#center, #head, #left, #nav, #right, #titleleft, #titleright {
+	background-color: #292929;
 }
 
 #center, #left {
@@ -65,12 +74,12 @@ ul {
 }
 
 #footer {
+	color: #292929;
 	clear: both;
 	text-align: center;
 }
 
 #head {
-	background-color: red;
 	height: 135px;
 	margin-bottom: 5px;
 }
@@ -81,20 +90,85 @@ ul {
 	width: 1214px;
 }
 
-#left {
-	background-color: yellow;
+#left, #right {
+	display: inline-block;
+	position: relative;
 	width: 219px;
+	z-index: 0;
 }
 
 #nav {
-	background-color: orange;
 	margin-bottom: 5px;
 	text-align: center;
 }
 
 #right {
-	background-color: blue;
-	display: inline-block;
+	float: left;
 	margin-bottom: 5px;
-	width: 219px;
+}
+
+#stuff {
+	position: absolute;
+	width: 100%;
+	top: 0px;
+}
+
+#titleleft, #titleright {
+	display: none;
+}
+
+/* CSS that changes when the screen is smaller than 1230px */
+@media screen and (max-width: 1230px) {
+	#center {
+		width: 655px;
+	}
+
+	#footer, #head, #main, #nav {
+		width: 1005px;
+	}
+
+	#left, #right {
+		width: 170px;
+	}
+}
+
+/* CSS that changes when the screen is smaller than 1024px */
+@media screen and (max-width: 1024px) {
+	h1 {
+		font-size: 24px;
+		padding: 5px;
+	}
+
+	#center, #footer, #head, #main, #nav {
+		width: 100%;
+	}
+
+	#left, #right, #titleleft, #titleright {
+		width: 49%;
+	}
+
+	#leftbar, #rightbar {
+		display: none;
+	}
+
+	#left, #right, #titleright {
+		position: absolute;
+	}
+
+	#right {
+		margin-top: 35px;
+	}
+
+	#right, #titleright {
+		right: 0px;
+	}
+
+	#titleleft, #titleright {
+		display: inline-block;
+		height: 30px;
+		font-size: 18px;
+		line-height: 30px;
+		margin-bottom: 5px;
+		text-align: center;
+	}
 }
