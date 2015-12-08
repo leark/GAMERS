@@ -6,6 +6,10 @@ body{
 	color:white;
 }
 
+form {
+	margin: 15px;
+}
+
 h1 {
 	background-color: black;
 	color: white;
@@ -74,7 +78,7 @@ a {
 #center, #left {
 	float: left;
 	margin-bottom: 5px;
-	margin-right: 5px;
+	margin-right: 6px;
 }
 
 #footer {
@@ -192,5 +196,9 @@ a {
 		line-height: 30px;
 		margin-bottom: 5px;
 		text-align: center;
+	}
+	
+	#titleleft:hover, #titleright:hover {
+		cursor: pointer;
 	}
 }
