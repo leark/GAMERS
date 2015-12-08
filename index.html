@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 	<head>
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +10,22 @@
 	    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 	    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />""
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
 
 	    <!-- Add ui-router library here -->
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 	    <!-- Custom code -->
 	    <link href = "css/main.css" rel="stylesheet" type = "text/css"/>
-	    
+	    <script src="js/main.js"></script>
 	  </head>
 
-	<body>
+	<body ng-app="myApp">
 
 	<!-- facebook authentication with firebasee -->
 
-
 		<div id="stuff">
-			<div id="head">Login / Register</div>
+			<div id="head"><span id="login">Login</span></div>
 			<div id="nav" class="header">
 				<a ui-sref="home" class="nav">Home</a> 
 				<a ui-sref="newPost" class="nav">New Post</a> 
@@ -68,23 +68,29 @@
 						</p> -->
 					</div>
 				</div>
-				<div ui-view>
-				<!-- featured stuff will pull data from the top post in different categories -->
 				<div id="center">
-					
+					<div ui-view>
+<!-- HEAD -->
 						<h1>Featured stuff????</h1>
-					<div class="container" id="centerTitle">
-					</div>
-					<div class ="container">
-						<h5 class= "threadList">Threads Created</h5>		
-					</div>
-					<div class ="container">
-						<ul>
-							<li class= "threadList" ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
-						</ul>
+					
+						<div class="container" id="centerTitle">
+							<h4>News</h4>
+						</div>
+						<div class ="container">
+							<div class ="row">
+								<div class ="col-md-4" id="topic">
+									<h5>Threads Created</h5>		
+								</div>
+								<div class ="container" id="threadList">
+									<ul>
+										<li ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
+									</ul>
 
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
+<!-- cc3f3b18f9b52b7c7be4e0515dd78aa190e4da3c -->
 				</div>
 
 				<div id="right">
@@ -131,5 +137,5 @@
 		</div>
 	</body>
 
-	<script src="js/main.js"></script>
+
 </html>

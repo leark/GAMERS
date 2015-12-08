@@ -2,7 +2,14 @@ body{
 	font-family: Arial;
 	font-size: 11px;
 	margin: 0px;
-	color:white;
+	background-image: url('../img/letmelivedeepwhileilive.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+}
+
+form {
+	margin: 15px;
 }
 
 h1 {
@@ -73,11 +80,10 @@ a {
 #center, #left {
 	float: left;
 	margin-bottom: 5px;
-	margin-right: 5px;
+	margin-right: 6px;
 }
 
 #footer {
-	color: #292929;
 	clear: both;
 	text-align: center;
 }
@@ -100,6 +106,11 @@ a {
 	position: relative;
 	width: 219px;
 	z-index: 0;
+}
+
+#login {
+	cursor: pointer;
+	padding-left: 15px;
 }
 
 #nav {
@@ -142,6 +153,10 @@ a {
 @media screen and (max-width: 1230px) {
 	#center {
 		width: 655px;
+	}
+
+	#center, #left {
+		margin-right: 5px;
 	}
 
 	#footer, #head, #main, #nav {
@@ -191,5 +206,9 @@ a {
 		line-height: 30px;
 		margin-bottom: 5px;
 		text-align: center;
+	}
+	
+	#titleleft:hover, #titleright:hover {
+		cursor: pointer;
 	}
 }

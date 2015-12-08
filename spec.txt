@@ -1,0 +1,31 @@
+Left sidebar
+News
+
+General
+
+Blog
+	featured blogger
+
+Featured Topic (theme of the month)
+	list of forums
+
+	Specific threads
+
+
+
+
+Main content
+	featured content
+		featured news
+				blog
+				topic
+
+
+right sidebar
+	Wiki
+		elements
+
+
+Authentication
+	facebook
+	google plus
