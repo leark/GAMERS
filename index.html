@@ -20,12 +20,12 @@
 	    <script src="js/main.js"></script>
 	  </head>
 
-	<body ng-app="myApp">
+	<body ng-app="myApp" ng-controller="myController">
 
 	<!-- facebook authentication with firebasee -->
 
 		<div id="stuff">
-			<div id="head"><span id="login">Login</span></div>
+			<div id="head"><span id="login">Login</span><span id="welcome">Welcome {{ username }}</span></div>
 			<div id="nav" class="header">
 				<a ui-sref="home" class="nav">Home</a> 
 				<a ui-sref="newPost" class="nav">New Post</a> 
@@ -38,11 +38,11 @@
 				<div id="titleright">Events/Features</div>
 
 
-				<div id="left" ng-repeat='forum in forums'>
-					<div id="leftbar">
-						<h1>{{forum.mainforum}}</h1>
+				<div id="left">
+					<div id="leftbar" ng-repeat='forum in forums'>
+						<h1>{{forum.category}}</h1>
 						<p>
-							<strong>{{forum.subforum}}</strong><br />
+							<strong>{{forum.name}}</strong><br />
 							<a href="" class="sidebar" ng-repeat="thread in threads">WOOHOO</a><br />
 							<a href="" class="sidebar">WOOHOO</a>
 						</p>
@@ -67,10 +67,30 @@
 							<a href="" class="sidebar">doodoo</a>
 						</p> -->
 					</div>
-
 				</div>
 				<div id="center">
-					<div ui-view>	
+					<div ui-view>
+<!-- HEAD -->
+						<h1>Featured stuff????</h1>
+					
+						<div class="container" id="centerTitle">
+							<h4>News</h4>
+						</div>
+						<div class ="container">
+							<div class ="row">
+								<div class ="col-md-4" id="topic">
+									<h5>Threads Created</h5>		
+								</div>
+								<div class ="container" id="threadList">
+									<ul>
+										<li ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
+									</ul>
+
+								</div>
+							</div>
+						</div>
+					</div>
+<!-- cc3f3b18f9b52b7c7be4e0515dd78aa190e4da3c -->
 				</div>
 
 				<div id="right">
@@ -107,9 +127,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container">
-			<p>WebIrc</p>
-			</div>
+
 			<div id="footer">
 				<p>
 					There is a footer here<br />
