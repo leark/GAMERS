@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', ['ui.router']);
 myApp.config(function($stateProvider) {
     $stateProvider
 	.state('home', {
-		url:'/',
+		url:'',
 		templateUrl: 'templates/forum/home.html',
 		controller: 'HomeController',
 	})
@@ -14,12 +14,40 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'templates/forum/newPost.html',
 		controller: 'NewPostController',
 	})
+
+	.state('threads', {
+		url: '/thread',
+		templateUrl: 'templates/forum/threads.html',
+		controller: 'ThreadController'
+	})
 }) 
 
 .controller('HomeController', function($scope){
 })
 
 .controller('NewPostController', function($scope){
+})
+
+.controller('ThreadController', function($scope, $http) {
+	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
+	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
+	var FORUM_NAME = "youtatest1";
+
+	  $scope.name = "stuff";
+	  $scope.posts = {};
+
+	  $http.get('https://disqus.com/api/3.0/forums/listPosts.json', {
+	      params: {
+	        access_token: ACCESS_TOKEN,
+	        api_key: API_KEY,
+	        forum: FORUM_NAME,
+	        order: "asc" } 
+	  }).success(function(response) {
+	    var data = response.response;
+	    console.log(data);
+	    $scope.posts = data;
+	  });
+	
 })
 
 $('#login').click(function() {
@@ -65,3 +93,8 @@ $(window).resize(function() {
 		$('#leftbar').css('display', 'none')
 	}
 });
+
+// $(newPostButton).click(function() {
+
+
+// })

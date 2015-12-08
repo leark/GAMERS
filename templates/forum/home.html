@@ -1,1 +1,25 @@
-<h1>HELLO THIS IS A TEST</h1>
+<h1 id="headerMessage" onload="getElementById('homepageStuff').style.display = 'initial'">Come Join the Discussion!</h1>
+<div id="headerButton" class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+		<a ui-sref="newPost" onclick="getElementById('homepageStuff').style.display = 'none'"><button type="submit" class="btn btn-default">Make New Post</button></a>
+	</div>
+</div>
+
+<div id="homepageStuff">
+	<div class="container" id="centerTitle">
+		<h4>News</h4>
+	</div>
+	<div class ="container">
+		<div class ="row">
+			<div class ="col-md-4" id="topic">
+				<h5>Threads Created</h5>		
+			</div>
+			<div class ="container" id="threadList">
+				<ul>
+					<li ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</div>

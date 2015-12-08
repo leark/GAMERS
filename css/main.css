@@ -6,6 +6,7 @@ body{
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: white;
+	background-attachment: fixed;
 }
 
 form {
@@ -26,6 +27,39 @@ p {
 
 strong {
 	font-size: 12px;
+}
+
+.timeStamp {
+	float: right;
+}
+
+#threadCenter {
+	width: 50%;
+	margin: auto;
+	font-family: arial;
+}
+
+#threadMain {
+	margin-top: 10px;
+	width: 635px;
+}
+
+.threadUser {
+	background-color: #9aacc6;
+	max-height: 30px;
+	font-size: 14px;
+	color: black;
+	line-height: 29px;
+	font-weight: 700;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.threadContent {
+	background-color: #d8dce0;
+	font-size: 14px;
+	min-height: 100px;
+	padding: 5px;
 }
 
 ul {
