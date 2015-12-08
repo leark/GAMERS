@@ -20,6 +20,10 @@
 	  </head>
 
 	<body>
+
+	<!-- facebook authentication with firebasee -->
+
+
 		<div id="stuff">
 			<div id="head">Login / Register</div>
 			<div id="nav">
@@ -63,14 +67,24 @@
 						</p>
 					</div>
 				</div>
-
+				<div ui-view>
 				<div id="center">
-					<div ui-view>
-						<h1>Featured stuff????</h1>
-						<p>
-							Me har har
-						</p>
+					
+					<div class="container" id="centerTitle">
+						<h4>News</h4>
 					</div>
+					<div class ="container">
+						<div class ="row">
+							<div class ="col-md-4" id="topic">
+								<h5>Threads Created</h5>		
+					</div>
+					<div class ="container" id="threadList">
+						<ul>
+							<li ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
+						</ul>
+
+					</div>
+				</div>
 				</div>
 
 				<div id="right">
@@ -93,7 +107,7 @@
 							</li>
 							<li><strong>October 11</strong>
 								<ul>
-									<li>sherry's bday</li>
+									<li>sherrys bday</li>
 									<li>really cool day</li>
 									<li>dessert time ;)</li>
 								</ul>

@@ -12,6 +12,7 @@ h1 {
 	text-align: center;
 }
 
+
 p {
 	padding-left: 5px;
 	padding-right: 5px;
@@ -112,8 +113,22 @@ a {
 	top: 0px;
 }
 
-#titleleft, #titleright {
+#titleleft, #titleright{
 	display: none;
+}
+
+#leftInline {
+	text-align: left;
+}
+
+#rightInline {
+	text-align: right;
+}
+
+#centerTitle {
+	color: white;
+	margin: 0px;
+	text-align: center;
 }
 
 /* CSS that changes when the screen is smaller than 1230px */
