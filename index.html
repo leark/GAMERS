@@ -1,7 +1,5 @@
-<!--Sorry I used really obnoxious colors guys I just wanted you to be able to see the different divs-->
-
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 	<head>
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,105 +7,115 @@
 	    <title>Gamers</title>
 	    
 	    <!-- Libraries -->
-	    <script src="https://code.jquery.com/jquery.min.js"></script>
-	    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />""
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
 
 	    <!-- Add ui-router library here -->
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 	    <!-- Custom code -->
-	    <script src="js/main.js"></script>
 	    <link href = "css/main.css" rel="stylesheet" type = "text/css"/>
 	    
 	  </head>
 
 	<body>
-	<div ng-app="myApp" ng-controller="myCtrl">
-		<div id="head">Login / Register</div>
-		<div id="nav">
-			<a href="/" class="nav">Home</a> 
-			<a href="/forum.html" class="nav">Forum</a> 
-			<a href="/calendar.html" class="nav">Calendar</a> 
-			<a href="" class="nav">GAMERS</a>
-		</div>
-
-		<div id="main">
-			<div id="left">
-				<h1>General</h1>
-				<p>
-					<strong>Hi Hello</strong><br />
-					<a href="" class="sidebar" ng-repeat="general in generals">WOOHOO</a><br />
-					<a href="" class="sidebar">WOOHOO</a>
-				</p>
-
-				<p>
-					<strong>Other Stuff?????</strong><br />
-					<a href="" class="sidebar" ng-repeat="stuff in stuffs">idk</a><br />
-					<a href="" class="sidebar">omg</a><br />
-					<a href="" class="sidebar">lol</a>
-
-				<h1>Games</h1>
-				<p>
-					<strong>I like to play games</strong><br />
-					<a href="" class="sidebar" ng-repeat="game in games">ayeeee</a><br />
-					<a href="" class="sidebar">ayeeee</a>
-				</p>
-
-				<h1>Other</h1>
-				<p>
-					<strong>I like other stuff</strong><br />
-					<a href="" class="sidebar" ng-repeat="other in others">poopy</a><br />
-					<a href="" class="sidebar">doodoo</a>
-				</p>
+		<div id="stuff">
+			<div id="head">Login / Register</div>
+			<div id="nav">
+				<a ui-sref="home" class="nav">Home</a> 
+				<a ui-sref="forum" class="nav">Forum</a> 
+				<a ui-sref="calendar" class="nav">Calendar</a> 
+				<a href="" class="nav">GAMERS</a>
 			</div>
 
-			<div id="center">
-				<h1>Featured stuff????</h1>
-				<p>
-					Me har har
-				</p>
-			</div>
+			<div id="main">
+				<div id="titleleft">Forum Sidebar</div>
+				<div id="titleright">Events/Features</div>
 
-			<div id="right">
-				<p>
-					Next Event
-				</p>
+				<div id="left">
+					<div id="leftbar">
+						<h1>General</h1>
+						<p>
+							<strong>Hi Hello</strong><br />
+							<a href="" class="sidebar" ng-repeat="general in generals">WOOHOO</a><br />
+							<a href="" class="sidebar">WOOHOO</a>
+						</p>
 
-				<p>
-					idk if you guys wanted this to have its own header too
-				</p>
+						<p>
+							<strong>Other Stuff?????</strong><br />
+							<a href="" class="sidebar" ng-repeat="stuff in stuffs">idk</a><br />
+							<a href="" class="sidebar">omg</a><br />
+							<a href="" class="sidebar">lol</a>
 
-				<h1>Events</h1>
-				<ul>
-					<li><strong>What's cookin good lookin</strong>
+						<h1>Games</h1>
+						<p>
+							<strong>I like to play games</strong><br />
+							<a href="" class="sidebar" ng-repeat="game in games">ayeeee</a><br />
+							<a href="" class="sidebar">ayeeee</a>
+						</p>
+
+						<h1>Other</h1>
+						<p>
+							<strong>I like other stuff</strong><br />
+							<a href="" class="sidebar" ng-repeat="other in others">poopy</a><br />
+							<a href="" class="sidebar">doodoo</a>
+						</p>
+					</div>
+				</div>
+
+				<div id="center">
+					<div ui-view>
+						<h1>Featured stuff????</h1>
+						<p>
+							Me har har
+						</p>
+					</div>
+				</div>
+
+				<div id="right">
+					<div id="rightbar">
+						<p>
+							Next Event
+						</p>
+
+						<p>
+							idk if you guys wanted this to have its own header too
+						</p>
+
+						<h1>Events</h1>
 						<ul>
-							<li ng-repeat="event in events">happenin' today</li>
-							<li>and always</li>
+							<li><strong>What's cookin good lookin</strong>
+								<ul>
+									<li ng-repeat="event in events">happenin' today</li>
+									<li>and always</li>
+								</ul>
+							</li>
+							<li><strong>October 11</strong>
+								<ul>
+									<li>sherry's bday</li>
+									<li>really cool day</li>
+									<li>dessert time ;)</li>
+								</ul>
+							</li>
 						</ul>
-					</li>
-					<li><strong>October 11</strong>
-						<ul>
-							<li>sherry's bday</li>
-							<li>really cool day</li>
-							<li>dessert time ;)</li>
-						</ul>
-					</li>
-				</ul>
 
-				<h1>Chat?</h1>
+						<h1>Chat?</h1>
+						<p>
+							Chat stuff
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="footer">
 				<p>
-					Chat stuff
+					There is a footer here<br />
+					Yo yo yo yo embryo &copy; 2015
 				</p>
 			</div>
 		</div>
-
-		<div id="footer">
-			<p>
-				There is a footer here<br />
-				Yo yo yo yo embryo &copy; 2015
-			</p>
-		</div>
-	</p>
 	</body>
+
+	<script src="js/main.js"></script>
 </html>
