@@ -31,7 +31,7 @@ a {
 	color:white;
 }
 
-.nav {
+.nav, .nav:visited {
 	color: white;
 	display: inline-block;
 	font-size: 24px;
@@ -41,7 +41,7 @@ a {
 	text-transform: uppercase;
 }
 
-.nav:hover {
+.nav:active, .nav:hover {
 	background-color: black;
 	color: white;
 	text-decoration: none;
@@ -54,6 +54,10 @@ a {
 
 .sidebar:hover {
 	text-decoration: underline;
+}
+
+.threadList {
+	text-align:left;
 }
 
 #center {
@@ -80,6 +84,9 @@ a {
 }
 
 #head {
+	background-image: url('http://gamer.ischool.uw.edu/wp-content/cache/image/static/153e54cba6f6c145fa30e635b04992f8.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 135px;
 	margin-bottom: 5px;
 }
@@ -91,7 +98,6 @@ a {
 }
 
 #left, #right {
-	display: inline-block;
 	position: relative;
 	width: 219px;
 	z-index: 0;
@@ -103,6 +109,7 @@ a {
 }
 
 #right {
+	display: inline-block;
 	float: left;
 	margin-bottom: 5px;
 }
@@ -115,6 +122,21 @@ a {
 
 #titleleft, #titleright {
 	display: none;
+}
+
+#leftInline {
+	text-align: left;
+}
+
+#rightInline {
+	text-align: right;
+}
+
+#centerTitle {
+	color: white;
+	margin: auto;
+	width:50%;
+	text-align: center;
 }
 
 /* CSS that changes when the screen is smaller than 1230px */
@@ -134,7 +156,7 @@ a {
 
 /* CSS that changes when the screen is smaller than 1024px */
 @media screen and (max-width: 1024px) {
-	h1 {
+	h1{
 		font-size: 24px;
 		padding: 5px;
 	}

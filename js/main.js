@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', ['ui.router']);
 
-.config(function($stateProvider) {
+myApp.config(function($stateProvider) {
     $stateProvider
 	.state('home', {
 		url:'/',
@@ -8,26 +8,18 @@ var myApp = angular.module('myApp', ['ui.router']);
 		controller: 'HomeController',
 	})
 	// Configure states for "content" and "about"
-	.state('forum', {
-		url:'/forum',
-		templateUrl: 'templates/forum.html',
-		controller: 'ForumController',
-	})
 
-	.state('calendar', {
-		url:'/calendar',
-		templateUrl: 'templates/calendar.html',
-		controller: 'CalendarController',
+	.state('newPost', {
+		url: '/newPost',
+		templateUrl: 'templates/newPost.html',
+		controller: 'NewPostController',
 	})
-})
+}) 
 
 .controller('HomeController', function($scope){
 })
 
-.controller('ForumController', function($scope){
-})
-
-.controller('CalendarController', function($scope){
+.controller('NewPostController', function($scope){
 })
 
 $('#titleleft').click(function() {
@@ -50,5 +42,15 @@ $('#titleright').click(function() {
 	} else {
 		$('#rightbar').css('display', 'none')
 		$('#right').css('z-index', '0')
+	}
+});
+
+$(window).resize(function() {
+	if($('#titleleft').css('display') == 'none') {
+		$('#rightbar').css('display', 'initial')
+		$('#leftbar').css('display', 'initial')
+	} else {
+		$('#rightbar').css('display', 'none')
+		$('#leftbar').css('display', 'none')
 	}
 });
