@@ -4,14 +4,14 @@ myApp.config(function($stateProvider) {
     $stateProvider
 	.state('home', {
 		url:'/',
-		templateUrl: 'templates/home.html',
+		templateUrl: 'templates/forum/home.html',
 		controller: 'HomeController',
 	})
 	// Configure states for "content" and "about"
 
 	.state('newPost', {
 		url: '/newPost',
-		templateUrl: 'templates/newPost.html',
+		templateUrl: 'templates/forum/newPost.html',
 		controller: 'NewPostController',
 	})
 }) 
