@@ -71,16 +71,14 @@
 				<div id="center">
 					
 					<div class="container" id="centerTitle">
-						<h4>News</h4>
+						<h4 id="centerTitle">News</h4>
 					</div>
 					<div class ="container">
-						<div class ="row">
-							<div class ="col-md-4" id="topic">
-								<h5>Threads Created</h5>		
+						<h5 class= "threadList">Threads Created</h5>		
 					</div>
-					<div class ="container" id="threadList">
+					<div class ="container">
 						<ul>
-							<li ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
+							<li class= "threadList" ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
 						</ul>
 
 					</div>
