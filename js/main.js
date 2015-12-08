@@ -24,6 +24,25 @@ myApp.config(function($stateProvider) {
 
 // loads after page is done loading
 $(function() {
+
+	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
+	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
+
+	$.get("https://disqus.com/api/3.0/users/listForums.json", 
+		{	access_token: ACCESS_TOKEN,
+		  api_key: API_KEY,
+			user: "185257554",
+			order: "asc" }, function(response) {
+		data = response.response;
+		console.log(data);
+		forums(data);
+	})
+
+	var forums = function(data) {
+
+	}
+
+
 	$('#login').click(function() {
 		var ref = new Firebase("https://gamersuw.firebaseio.com");
 		ref.authWithOAuthPopup("facebook", function(error, authData) {
