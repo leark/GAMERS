@@ -2,7 +2,7 @@ body{
 	font-family: Arial;
 	font-size: 11px;
 	margin: 0px;
-	background-image: "img/letmelivedeepwhileilive.jpg";
+	background-image: url('../img/letmelivedeepwhileilive.jpg');
 	color:white;
 }
 
@@ -105,6 +105,10 @@ a {
 	position: relative;
 	width: 219px;
 	z-index: 0;
+}
+
+#login {
+	cursor: pointer;
 }
 
 #nav {
