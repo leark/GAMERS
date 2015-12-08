@@ -22,6 +22,17 @@ myApp.config(function($stateProvider) {
 .controller('NewPostController', function($scope){
 })
 
+$('#login').click(function() {
+	var ref = new Firebase("https://gamersuw.firebaseio.com");
+	ref.authWithOAuthPopup("facebook", function(error, authData) {
+	  if (error) {
+	    console.log("Login Failed!", error);
+	  } else {
+	    console.log("Authenticated successfully with payload:", authData);
+	  }
+	});
+})
+
 $('#titleleft').click(function() {
 	if($('#leftbar').css('display') == 'none') {
 		$('#leftbar').css('display', 'initial')
