@@ -1,0 +1,16 @@
+<div id="center">
+	
+		<h1>News</h1>
+	<div class="container" id="centerTitle">
+	</div>
+	<div class ="container">
+		<h5 class= "threadList">Threads Created</h5>		
+	</div>
+	<div class ="container">
+		<ul>
+			<li class= "threadList" ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
+		</ul>
+
+	</div>
+</div>
+</div>
