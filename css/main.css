@@ -3,7 +3,9 @@ body{
 	font-size: 11px;
 	margin: 0px;
 	background-image: url('../img/letmelivedeepwhileilive.jpg');
-	color:white;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
 }
 
 form {
@@ -82,7 +84,6 @@ a {
 }
 
 #footer {
-	color: #292929;
 	clear: both;
 	text-align: center;
 }
@@ -151,6 +152,10 @@ a {
 @media screen and (max-width: 1230px) {
 	#center {
 		width: 655px;
+	}
+
+	#center, #left {
+		margin-right: 5px;
 	}
 
 	#footer, #head, #main, #nav {
