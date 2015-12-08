@@ -37,16 +37,17 @@
 				<div id="titleleft">Forum Sidebar</div>
 				<div id="titleright">Events/Features</div>
 
-				<div id="left">
+
+				<div id="left" ng-repeat='forum in forums'>
 					<div id="leftbar">
-						<h1>General</h1>
+						<h1>{{forum.mainforum}}</h1>
 						<p>
-							<strong>Hi Hello</strong><br />
-							<a href="" class="sidebar" ng-repeat="general in generals">WOOHOO</a><br />
+							<strong>{{forum.subforum}}</strong><br />
+							<a href="" class="sidebar" ng-repeat="thread in threads">WOOHOO</a><br />
 							<a href="" class="sidebar">WOOHOO</a>
 						</p>
 
-						<p>
+						<!-- <p>
 							<strong>Other Stuff?????</strong><br />
 							<a href="" class="sidebar" ng-repeat="stuff in stuffs">idk</a><br />
 							<a href="" class="sidebar">omg</a><br />
@@ -64,7 +65,7 @@
 							<strong>I like other stuff</strong><br />
 							<a href="" class="sidebar" ng-repeat="other in others">poopy</a><br />
 							<a href="" class="sidebar">doodoo</a>
-						</p>
+						</p> -->
 					</div>
 				</div>
 				<div id="center">
