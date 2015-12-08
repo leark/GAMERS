@@ -22,6 +22,10 @@ myApp.config(function($stateProvider) {
 .controller('NewPostController', function($scope){
 })
 
+.controller('myController', function($scope) {
+	$scope.forums = {};
+})
+
 // loads after page is done loading
 $(function() {
 
@@ -35,11 +39,15 @@ $(function() {
 			order: "asc" }, function(response) {
 		data = response.response;
 		console.log(data);
-		forums(data);
+		getForums(data);
 	})
 
-	var forums = function(data) {
-
+	var getForums = function(data) {
+		var scope = angular.element($("body")).scope();
+    		scope.$apply(function() {
+    		scope.forums = data;
+			console.log(scope.forums);
+		})
 	}
 
 
