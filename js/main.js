@@ -43,6 +43,14 @@ $('#titleright').click(function() {
 		$('#rightbar').css('display', 'none')
 		$('#right').css('z-index', '0')
 	}
-
 });
 
+$(window).resize(function() {
+	if($('#titleleft').css('display') == 'none') {
+		$('#rightbar').css('display', 'initial')
+		$('#leftbar').css('display', 'initial')
+	} else {
+		$('#rightbar').css('display', 'none')
+		$('#leftbar').css('display', 'none')
+	}
+});
