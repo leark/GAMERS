@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 	<head>
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,16 +17,15 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 	    <!-- Custom code -->
 	    <link href = "css/main.css" rel="stylesheet" type = "text/css"/>
-	    
+	    <script src="js/main.js"></script>
 	  </head>
 
-	<body>
+	<body ng-app="myApp" ng-controller="myController">
 
 	<!-- facebook authentication with firebasee -->
 
-
 		<div id="stuff">
-			<div id="head"><span id="login">Login</span></div>
+			<div id="head"><span id="login">Login</span><span id="welcome">Welcome {{ username }}</span></div>
 			<div id="nav" class="header">
 				<a ui-sref="home" class="nav" onclick="getElementById('homepageStuff').style.display = 'initial'">Home</a> 
 				<a ui-sref="newPost" class="nav">New Post</a> 
@@ -38,16 +37,17 @@
 				<div id="titleleft">Forum Sidebar</div>
 				<div id="titleright">Events/Features</div>
 
+
 				<div id="left">
-					<div id="leftbar">
-						<h1>General</h1>
+					<div id="leftbar" ng-repeat='forum in forums'>
+						<h1>{{forum.category}}</h1>
 						<p>
-							<strong>Hi Hello</strong><br />
-							<a href="" class="sidebar" ng-repeat="general in generals">WOOHOO</a><br />
+							<strong>{{forum.name}}</strong><br />
+							<a href="" class="sidebar" ng-repeat="thread in threads">WOOHOO</a><br />
 							<a href="" class="sidebar">WOOHOO</a>
 						</p>
 
-						<p>
+						<!-- <p>
 							<strong>Other Stuff?????</strong><br />
 							<a href="" class="sidebar" ng-repeat="stuff in stuffs">idk</a><br />
 							<a href="" class="sidebar">omg</a><br />
@@ -65,7 +65,7 @@
 							<strong>I like other stuff</strong><br />
 							<a href="" class="sidebar" ng-repeat="other in others">poopy</a><br />
 							<a href="" class="sidebar">doodoo</a>
-						</p>
+						</p> -->
 					</div>
 				</div>
 				<div id="center">
@@ -117,5 +117,5 @@
 		</div>
 	</body>
 
-	<script src="js/main.js"></script>
+
 </html>
