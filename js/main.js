@@ -74,20 +74,20 @@ myApp.config(function($stateProvider) {
 		$scope.posts = data;
 	});
 
-	$scope.createPost = function() {
-		var post = $('replyComment').val();
-		var url = window.location.href;
-		var id = url.substr(url.lastIndexOf("/") + 1);
-		$.post("https://disqus.com/api/3.0/posts/create.json", {
-			access_token: ACCESS_TOKEN,
-			api_key: API_KEY,
-			message: post,
-			thread: id,
-			author_name: "sherry"
-		}, function() {
-			post = "";
-		}, "json");
-	})
+	// $scope.createPost = function() {
+	// 	var post = $('replyComment').val();
+	// 	var url = window.location.href;
+	// 	var id = url.substr(url.lastIndexOf("/") + 1);
+	// 	$.post("https://disqus.com/api/3.0/posts/create.json", {
+	// 		access_token: ACCESS_TOKEN,
+	// 		api_key: API_KEY,
+	// 		message: post,
+	// 		thread: id,
+	// 		author_name: "sherry"
+	// 	}, function() {
+	// 		post = "";
+	// 	}, "json");
+	// })
 
 })
 
@@ -104,6 +104,10 @@ myApp.config(function($stateProvider) {
 		  	$scope.showLogin = false;
 		  	$scope.$digest();
 		    console.log("Authenticated successfully with payload:", authData);
+		    var scope = angular.element($("body")).scope();
+    		scope.$apply(function() {
+    			scope.userName = authData.facebook.displayName;
+			})
 		    
 		  }
 
