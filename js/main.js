@@ -44,7 +44,9 @@ myApp.config(function($stateProvider) {
 	        order: "asc" } 
 	  }).success(function(response) {
 	    var data = response.response;
-	    console.log(data);
+	    for (var i =0; i < data.length; i++) {
+	    	data[i].createdAt = Date.parse(data[i].createdAt);
+	    }
 	    $scope.posts = data;
 	  });
 	
