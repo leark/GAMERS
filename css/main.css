@@ -38,6 +38,11 @@ strong {
 	margin-right: auto;
 }
 
+button {
+	color:black;
+	text-align: left;
+}
+
 .post {
 	width: 100%;
 	margin-left: auto;
@@ -169,7 +174,6 @@ a, a:visited {
 
 #login, #logout{
 	cursor: pointer;
-	padding-left: 15px;
 }
 
 #nav {

@@ -86,18 +86,21 @@ myApp.config(function($stateProvider) {
 		  if (error) {
 		    console.log("Login Failed!", error);
 		  } else {
+		  	$scope.showLogin = false;
+		  	$scope.$digest();
 		    console.log("Authenticated successfully with payload:", authData);
-		    $scope.showLogin = false;
+		    
 		  }
 
 		});	
 
-	$('#logout').click(function() {
-		console.log(ref);
-		ref.unauth();
-		console.log(ref);
-		$scope.showLogin = true;
+	
 	})
+
+	$('#logout').click(function() {
+		ref.unauth();
+		$scope.showLogin = true;
+		$scope.$digest();
 	})
 
 
