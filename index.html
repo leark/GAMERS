@@ -50,12 +50,12 @@
 							<ul>
 								<li><strong>Featured</strong>
 									<ul ng-repeat="thread1 in threads1">
-										<li><a href="" class="sidebar"> {{ thread1.title }}</a></li>
+										<li><a ng-href="/#/thread/{{ thread1.id }}" class="sidebar"> {{ thread1.title }}</a></li>
 									</ul>
 								</li>
 								<li><strong>Community</strong>
 									<ul ng-repeat="thread2 in threads2">
-										<li><a href="" class="sidebar">{{ thread2.title }}</a></li>
+										<li><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -66,7 +66,7 @@
 							<ul>
 								<li><strong>Example</strong>
 									<ul ng-repeat="thread3 in threads3">
-										<li><a href="" class="sidebar">{{ thread3.title }}</a></li>
+										<li><a href="/#/thread/{{ thread3.id }}" class="sidebar">{{ thread3.title }}</a></li>
 									</ul>
 								</li>
 							</ul>

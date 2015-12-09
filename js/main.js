@@ -73,7 +73,8 @@ $(function() {
 	$.get("https://disqus.com/api/3.0/users/listForums.json", {
 		access_token: ACCESS_TOKEN,
 		api_key: API_KEY,
-		user: "185257554"
+		user: "185257554",
+		order: "asc"
 	}, function(response) {
 		data = response.response;
 		console.log(data);
