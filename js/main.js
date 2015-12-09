@@ -143,7 +143,19 @@ $(function() {
 		})
 	}
 
-
+	$('#replyButton').click(function() {
+		var post = $('replyComment').val();
+		var url = window.location.href;
+		var id = url.substr(url.lastIndexOf("/") + 1);
+		$.post("https://disqus.com/api/3.0/posts/create.json", {
+			access_token: ACCESS_TOKEN,
+			api_key: API_KEY,
+			message: post,
+			thread: id
+		}, function() {
+			post = "";
+		});
+	})
 
 	$('#titleleft').click(function() {
 		if($('#leftbar').css('display') == 'none') {
