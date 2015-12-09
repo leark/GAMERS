@@ -39,38 +39,56 @@
 
 
 				<div id="left">
-					<div id="leftbar" ng-repeat='forum in forums'>
-						<h1>{{forum.category}}</h1>
+					<div id="leftbar"> <!--ng-repeat='forum in forums'-->
+						<!--<h1>{{forum.category}}</h1>
 						<p>
 							<strong>{{forum.name}}</strong><br />
 							<a href="" class="sidebar" ng-repeat="thread in threads">WOOHOO</a><br />
 							<a href="" class="sidebar">WOOHOO</a>
-						</p>
-
-						<!-- <p>
-							<strong>Other Stuff?????</strong><br />
-							<a href="" class="sidebar" ng-repeat="stuff in stuffs">idk</a><br />
-							<a href="" class="sidebar">omg</a><br />
-							<a href="" class="sidebar">lol</a>
-
-						<h1>Games</h1>
-						<p>
-							<strong>I like to play games</strong><br />
-							<a href="" class="sidebar" ng-repeat="game in games">ayeeee</a><br />
-							<a href="" class="sidebar">ayeeee</a>
-						</p>
-
-						<h1>Other</h1>
-						<p>
-							<strong>I like other stuff</strong><br />
-							<a href="" class="sidebar" ng-repeat="other in others">poopy</a><br />
-							<a href="" class="sidebar">doodoo</a>
 						</p> -->
+
+						<h1>General</h1>
+						<p>
+							<ul>
+								<li><strong>Featured</strong>
+									<ul ng-repeat="thread1 in threads1">
+										<li><a href="" class="sidebar"> {{ thread1.title }}</a></li>
+									</ul>
+								</li>
+								<li><strong>Community</strong>
+									<ul ng-repeat="thread2 in threads2">
+										<li><a href="" class="sidebar">{{ thread2.title }}</a></li>
+									</ul>
+								</li>
+							</ul>
+						</p>
+
+						<h1>Blog</h1>
+						<p>
+							<ul>
+								<li><strong>Example</strong>
+									<ul ng-repeat="thread3 in threads3">
+										<li><a href="" class="sidebar">{{ thread3.title }}</a></li>
+									</ul>
+								</li>
+							</ul>
+						</p>
+
+						<h1>Featured Topic</h1>
+						<p>
+							<ul>
+								<li><strong>Example</strong>
+									<ul>
+										<li><a href="" class="sidebar" ng-repeat="other in others">ex 1</a></li>
+										<li><a href="" class="sidebar">ex 2</a></li>
+									</ul>
+								</li>
+							</ul>
+						</p>
 					</div>
 				</div>
 				<div id="center">
 					<div ui-view></div>
-
 				</div>
 
 				<div id="right">
