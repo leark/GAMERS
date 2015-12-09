@@ -8,7 +8,6 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'templates/forum/home.html',
 		controller: 'HomeController',
 	})
-	// Configure states for "content" and "about"
 
 	.state('newPost', {
 		url: '/newPost',
@@ -27,25 +26,19 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'templates/forum/irc.html',
 		controller: 'IrcController'
 	})
-
 }) 
 
-.controller('HomeController', function($scope){
+.controller('HomeController', function($scope){})
 
-})
-
-.controller('NewPostController', function($scope){
-})
-
+.controller('NewPostController', function($scope){})
 
 .controller('IrcController', function($scope){
 })
 
-
 .controller('ThreadController', function($scope, $http, $stateParams) {
-
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
+	var DISQUS_KEY = "E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F";
 	var FORUM_NAME = "youtatest1";
 
 	var THREAD_ID = $stateParams.threadId;
@@ -74,21 +67,25 @@ myApp.config(function($stateProvider) {
 		$scope.posts = data;
 	});
 
-	// $scope.createPost = function() {
-	// 	var post = $('replyComment').val();
-	// 	var url = window.location.href;
-	// 	var id = url.substr(url.lastIndexOf("/") + 1);
-	// 	$.post("https://disqus.com/api/3.0/posts/create.json", {
-	// 		access_token: ACCESS_TOKEN,
-	// 		api_key: API_KEY,
-	// 		message: post,
-	// 		thread: id,
-	// 		author_name: "sherry"
-	// 	}, function() {
-	// 		post = "";
-	// 	}, "json");
-	// })
+	$scope.createPost = function() {
+		var post = $('#replyText').val();
+		var url = window.location.href;
+		var id = url.substr(url.lastIndexOf("/") + 1);
 
+		$http({
+			url: "https://disqus.com/api/3.0/posts/create.json",
+			method: "POST",
+			params: {
+				api_key: DISQUS_KEY,
+				message: post,
+				thread: id,
+				author_name: "sherry",
+				author_email: "shgao1011@gmail.com"
+			}
+		}).success(function() {
+			document.location.reload(true);
+		})
+	}
 })
 
 .controller('myController', function($scope) {
@@ -98,22 +95,18 @@ myApp.config(function($stateProvider) {
 	$('#login').click(function() {
 		ref = new Firebase("https://gameruw.firebaseio.com");
 		ref.authWithOAuthPopup("facebook", function(error, authData) {
-		  if (error) {
-		    console.log("Login Failed!", error);
-		  } else {
-		  	$scope.showLogin = false;
-		  	$scope.$digest();
-		    console.log("Authenticated successfully with payload:", authData);
-		    var scope = angular.element($("body")).scope();
-    		scope.$apply(function() {
-    			scope.userName = authData.facebook.displayName;
-			})
-		    
-		  }
-
+			if (error) {
+		    	console.log("Login Failed!", error);
+			} else {
+			  	$scope.showLogin = false;
+			  	$scope.$digest();
+			    console.log("Authenticated successfully with payload:", authData);
+			    var scope = angular.element($("body")).scope();
+	    		scope.$apply(function() {
+	    			scope.userName = authData.facebook.displayName;
+				})
+			}
 		});	
-
-	
 	})
 
 	$('#logout').click(function() {
@@ -122,12 +115,10 @@ myApp.config(function($stateProvider) {
 		$scope.$digest();
 	})
 
-
 })
 
 // loads after page is done loading
 $(function() {
-
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
 
@@ -198,4 +189,3 @@ $(function() {
 		}
 	});
 })
-
