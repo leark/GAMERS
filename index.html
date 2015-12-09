@@ -74,10 +74,9 @@
 						<h1>Featured Topic</h1>
 						<p>
 							<ul>
-								<li><strong>Example</strong>
-									<ul>
-										<li><a href="" class="sidebar" ng-repeat="other in others">ex 1</a></li>
-										<li><a href="" class="sidebar">ex 2</a></li>
+								<li>
+									<ul ng-repeat="thread2 in threads2">
+										<li><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
 									</ul>
 								</li>
 							</ul>

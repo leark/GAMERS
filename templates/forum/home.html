@@ -1,22 +1,29 @@
 <div>
-	<a onload="getElementById('homepageStuff').style.display = 'initial'" ui-sref="newPost" onclick="getElementById('homepageStuff').style.display = 'none'"><button type="submit" class="btn btn-default">Make New Post</button></a>
+	<p id="gamersDesc">The GAMER Group explores new ideas and approaches for organizing and providing access to video games and interactive media, particularly from a user-centered perspective. We research various topics related to data modeling, metadata creation, and construction of controlled vocabularies for games and other related media such as music, artwork, videos, and more. The group is also responsible for developing and maintaining the UW/SIMM Video Game Metadata Schema in order to advance the cataloging practice of these popular cultural artifacts in cultural heritage organizations and support the use of games in education and science.</br></br>The GAMER Group is led by Professor Jin Ha Lee at the Information School, University of Washington.</p>
+<div>
 </div>
 
 <div id="homepageStuff">
 	<div class="container" id="centerTitle">
-		<h4>News</h4>
+		<h4>Featured Topic</h4>
 	</div>
-	<div class ="container">
-		<div class ="row">
-			<div class ="col-md-4" id="topic">
+	<div>
+		<div>
+			<div id="topic">
 				<h5>Threads Created</h5>		
 			</div>
 			<div class ="container" id="threadList">
-				<ul>
+				<!-- <ul>
 					<li ng-repeat='thread in threads'>{{thread.title + ' , created at ' + thread.createdAt}}</li>
+				</ul> -->
+				<ul ng-repeat="thread2 in threads2">
+					<li><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
 				</ul>
-
 			</div>
 		</div>
 	</div>
 </div>
+
+<!-- <div>
+	<a onload="getElementById('homepageStuff').style.display = 'initial'" ui-sref="newPost" onclick="getElementById('homepageStuff').style.display = 'none'"><button type="submit" class="btn btn-default">Make New Post</button></a>
+</div> -->
