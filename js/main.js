@@ -1,4 +1,5 @@
 var myApp = angular.module('myApp', ['ui.router']);
+var ref;
 
 myApp.config(function($stateProvider) {
     $stateProvider
@@ -12,7 +13,7 @@ myApp.config(function($stateProvider) {
 	.state('newPost', {
 		url: '/newPost',
 		templateUrl: 'templates/forum/newPost.html',
-		controller: 'NewPostController',
+		controller: 'NewPostController',	
 	})
 
 	.state('threads', {
@@ -20,13 +21,26 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'templates/forum/threads.html',
 		controller: 'ThreadController'
 	})
+
+	.state('irc', {
+		url: '/irc',
+		templateUrl: 'templates/forum/irc.html',
+		controller: 'IrcController'
+	})
+
 }) 
 
 .controller('HomeController', function($scope){
+
 })
 
 .controller('NewPostController', function($scope){
 })
+
+.controller('IrcController', function($scope){
+})
+
+
 
 .controller('ThreadController', function($scope, $http) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
@@ -52,6 +66,27 @@ myApp.config(function($stateProvider) {
 
 .controller('myController', function($scope) {
 	$scope.forums = {};
+	$scope.showLogin = true;
+	$('#login').click(function() {
+		ref = new Firebase("https://gamersuw.firebaseio.com");
+		ref.authWithOAuthPopup("facebook", function(error, authData) {
+		  if (error) {
+		    console.log("Login Failed!", error);
+		  } else {
+		    console.log("Authenticated successfully with payload:", authData);
+		    $scope.showLogin = false;
+		  }
+
+		});	
+
+	$('#logout').click(function() {
+		console.log(ref);
+		ref.unauth();
+		console.log(ref);
+		$scope.showLogin = true;
+	})
+	})
+
 })
 
 // loads after page is done loading
@@ -78,16 +113,7 @@ $(function() {
 		})
 	}
 
-	$('#login').click(function() {
-		var ref = new Firebase("https://gamersuw.firebaseio.com");
-		ref.authWithOAuthPopup("facebook", function(error, authData) {
-		  if (error) {
-		    console.log("Login Failed!", error);
-		  } else {
-		    console.log("Authenticated successfully with payload:", authData);
-		  }
-		});
-	})
+
 
 	$('#titleleft').click(function() {
 		if($('#leftbar').css('display') == 'none') {
