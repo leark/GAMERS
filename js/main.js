@@ -53,7 +53,6 @@ myApp.config(function($stateProvider) {
 })
 
 .controller('myController', function($scope) {
-	$scope.forums = {};
 })
 
 // loads after page is done loading
@@ -62,21 +61,46 @@ $(function() {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
 
-	$.get("https://disqus.com/api/3.0/users/listForums.json", 
-		{	access_token: ACCESS_TOKEN,
-		  api_key: API_KEY,
-			user: "185257554",
-			order: "asc" }, function(response) {
+	$.get("https://disqus.com/api/3.0/users/listForums.json", {
+		access_token: ACCESS_TOKEN,
+		api_key: API_KEY,
+		user: "185257554"
+	}, function(response) {
 		data = response.response;
 		console.log(data);
 		getForums(data);
 	})
 
 	var getForums = function(data) {
+		var number = 1;
+		for (var i = 0; i < data.length; i++) {
+			var name = data[i].name;	
+			$.get("https://disqus.com/api/3.0/forums/listThreads.json", {
+				access_token: ACCESS_TOKEN,
+				api_key: API_KEY,
+				forum: name
+			}, function(response) {
+				dat = response.response;
+				getThreads(dat, "threads" + number);
+				number++;
+			})
+		}
+	}
+
+	/*$.get("https://disqus.com/api/3.0/users/listThreads.json", {
+		access_token: ACCESS_TOKEN,
+		api_key: API_KEY,
+		forum: "uwexample1"
+		//user: "185257554"
+	}, function(response) {
+		data = response.response;
+		getThreads(data);
+	})*/
+
+	var getThreads = function(data, num) {
 		var scope = angular.element($("body")).scope();
-    		scope.$apply(function() {
-    		scope.forums = data;
-			console.log(scope.forums);
+    	scope.$apply(function() {
+    		scope[num] = data;
 		})
 	}
 
