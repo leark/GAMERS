@@ -74,6 +74,21 @@ myApp.config(function($stateProvider) {
 		$scope.posts = data;
 	});
 
+	$scope.createPost = function() {
+		var post = $('replyComment').val();
+		var url = window.location.href;
+		var id = url.substr(url.lastIndexOf("/") + 1);
+		$.post("https://disqus.com/api/3.0/posts/create.json", {
+			access_token: ACCESS_TOKEN,
+			api_key: API_KEY,
+			message: post,
+			thread: id,
+			author_name: "sherry"
+		}, function() {
+			post = "";
+		}, "json");
+	})
+
 })
 
 .controller('myController', function($scope) {
@@ -81,7 +96,7 @@ myApp.config(function($stateProvider) {
 	$scope.forums = {};
 	$scope.showLogin = true;
 	$('#login').click(function() {
-		ref = new Firebase("https://gamersuw.firebaseio.com");
+		ref = new Firebase("https://gameruw.firebaseio.com");
 		ref.authWithOAuthPopup("facebook", function(error, authData) {
 		  if (error) {
 		    console.log("Login Failed!", error);
@@ -145,20 +160,6 @@ $(function() {
     		scope[num] = data;
 		})
 	}
-
-	$('#replyButton').click(function() {
-		var post = $('replyComment').val();
-		var url = window.location.href;
-		var id = url.substr(url.lastIndexOf("/") + 1);
-		$.post("https://disqus.com/api/3.0/posts/create.json", {
-			access_token: ACCESS_TOKEN,
-			api_key: API_KEY,
-			message: post,
-			thread: id
-		}, function() {
-			post = "";
-		}, "json");
-	})
 
 	$('#titleleft').click(function() {
 		if($('#leftbar').css('display') == 'none') {
