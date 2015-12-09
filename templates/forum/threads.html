@@ -27,7 +27,7 @@
 		<textarea class="form-control" id="replyText" placeholder="Reply with a Comment" rows="3"></textarea>
 	</div>
 </div>
-<div class="form-group">
+<div class="form-group" ng-show="!showLogin">
 	<div class="col-sm-offset-2 col-sm-10">
 		<button id="replyButton" ng-click="createPost()" type="submit" class="btn btn-default">Reply</button>
 	</div>
