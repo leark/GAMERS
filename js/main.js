@@ -154,7 +154,7 @@ $(function() {
 			thread: id
 		}, function() {
 			post = "";
-		});
+		}, "json");
 	})
 
 	$('#titleleft').click(function() {
