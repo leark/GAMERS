@@ -92,7 +92,7 @@ ul {
 	padding-left: 15px;
 }
 
-a {
+a, a:visited {
 	color:white;
 }
 
