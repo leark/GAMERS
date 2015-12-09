@@ -142,7 +142,7 @@ a, a:visited {
 	margin-right: 6px;
 }
 
-#footer {
+#footer, #irc{
 	clear: both;
 	text-align: center;
 }
@@ -155,7 +155,7 @@ a, a:visited {
 	margin-bottom: 5px;
 }
 
-#footer, #head, #main, #nav {
+#footer, #head, #main, #nav, #irc{
 	margin-left: auto;
 	margin-right: auto;
 	width: 1214px;
@@ -167,7 +167,7 @@ a, a:visited {
 	z-index: 0;
 }
 
-#login {
+#login, #logout{
 	cursor: pointer;
 	padding-left: 15px;
 }
@@ -218,7 +218,7 @@ a, a:visited {
 		margin-right: 5px;
 	}
 
-	#footer, #head, #main, #nav {
+	#footer, #head, #main, #nav, #irc {
 		width: 1005px;
 	}
 
@@ -234,7 +234,7 @@ a, a:visited {
 		padding: 5px;
 	}
 
-	#center, #footer, #head, #main, #nav {
+	#center, #footer, #head, #main, #nav, #irc {
 		width: 100%;
 	}
 
