@@ -31,10 +31,6 @@ strong {
 	font-size: 12px;
 }
 
-#buttonNMessage h1, #buttonNMessage button {
-	display: inline-block;
-}
-
 #replyComment {
 	width: 100%;
 	margin-bottom: 10px;
