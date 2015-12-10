@@ -16,7 +16,7 @@
 				<td>Last Updated</td>
 			</tr>
 			<tr ng-repeat="general in generals | orderBy:'-recent'" ng-if="general.featured" class="featuredThreads">
-				<td class='threadTable'><a href="ishiiy/#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
+				<td class='threadTable'><a href="#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
 				<td>{{ general.author }}</td>
 				<td>{{ general.replies }}</td>
 				<td>{{ general.recent | date : 'short'  }}</td>
@@ -30,7 +30,7 @@
 				<td>Last Updated</td>
 			</tr>
 			<tr ng-repeat="general in generals | filter:!featured | orderBy:'-recent'" class="featuredThreads">
-				<td class='threadTable'><a href="/#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
+				<td class='threadTable'><a href="#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
 				<td>{{ general.author }}</td>
 				<td>{{ general.replies }}</td>
 				<td>{{ general.recent | date : 'short'  }}</td>
