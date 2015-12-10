@@ -95,7 +95,6 @@ myApp.config(function($stateProvider) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
 	var DISQUS_KEY = "E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F";
-	var FORUM_NAME = "youtatest1";
 	
 	var THREAD_ID = $stateParams.threadId;
 
@@ -105,6 +104,7 @@ myApp.config(function($stateProvider) {
 	//example urls:
 	// http://localhost:8080/#/thread/4367055812
 	// http://localhost:8080/#/thread/4367336827
+
 	$scope.getPosts = function() {
 		$http({
 			url: 'https://disqus.com/api/3.0/threads/listPosts.json', 
