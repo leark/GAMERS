@@ -15,7 +15,7 @@
 			<td>Replies</td>
 			<td>Last Updated</td>
 		</tr>
-		<tr ng-repeat="blog in blogs | filter:featured" class="featuredThreads">
+		<tr ng-repeat="blog in blogs | filter:featured | orderBy:'-recent'" class="featuredThreads">
 			<td><a href="/#/thread/{{ blog.$id }}" class="emailStyle">{{ blog.title }}</a></td>
 			<td>{{ blog.author }}</td>
 			<td>{{ blog.replies }}</td>
@@ -29,7 +29,7 @@
 			<td>Replies</td>
 			<td>Date Created</td>
 		</tr>
-		<tr ng-repeat="blog in blogs | filter:!featured" class="featuredThreads">
+		<tr ng-repeat="blog in blogs | filter:!featured | orderBy:'-recent'" class="featuredThreads">
 			<td><a href="/#/thread/{{ blog.$id }}" class="emailStyle">{{ blog.title }}</a></td>
 			<td>{{ blog.author }}</td>
 			<td>{{ blog.replies }}</td>

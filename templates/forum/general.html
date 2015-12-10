@@ -15,7 +15,7 @@
 				<td>Replies</td>
 				<td>Last Updated</td>
 			</tr>
-			<tr ng-repeat="general in generals | filter:featured" class="featuredThreads">
+			<tr ng-repeat="general in generals | filter:featured | orderBy:'-recent'" class="featuredThreads">
 				<td class='threadTable'><a href="/#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
 				<td>{{ general.author }}</td>
 				<td>{{ general.replies }}</td>
@@ -29,7 +29,7 @@
 				<td>Replies</td>
 				<td>Last Updated</td>
 			</tr>
-			<tr ng-repeat="general in generals | filter:!featured" class="featuredThreads">
+			<tr ng-repeat="general in generals | filter:!featured | orderBy:'-recent'" class="featuredThreads">
 				<td><a href="/#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
 				<td>{{ general.author }}</td>
 				<td>{{ general.replies }}</td>

@@ -15,7 +15,7 @@
 				<td>Replies</td>
 				<td>Date Created</td>
 			</tr>
-			<tr ng-repeat="feature in featured " class="featuredThreads">
+			<tr ng-repeat="feature in featured  | orderBy:'-recent'" class="featuredThreads">
 				<td><a href="/#/thread/{{ feature.$id }}" class="emailStyle">{{ feature.title }}</a></td>
 				<td>{{ feature.author }}</td>
 				<td>{{ feature.replies }}</td>
