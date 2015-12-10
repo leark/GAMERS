@@ -71,6 +71,8 @@ myApp.config(function($stateProvider) {
 		for (var i =0; i < data.length; i++) {
 	    	data[i].createdAt = Date.parse(data[i].createdAt);
 	    }
+	    console.log("list posts");
+	    console.log(data);
 		$scope.posts = data;
 	});
 
@@ -152,6 +154,8 @@ $(function() {
 				forum: name
 			}, function(response) {
 				dat = response.response;
+				console.log("forum response");
+				console.log(dat);
 				getThreads(dat, "threads" + number);
 				number++;
 			})
