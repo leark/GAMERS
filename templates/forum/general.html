@@ -1,0 +1,32 @@
+<h4>GAMERS General Forum</h4>
+
+<div id="listShowArea">
+		<table>
+			<tr id="tableHead">
+				<td>General Threads: Featured</td>
+				<td>Original Creator</td>
+				<td>Replies</td>
+				<td>Date Created</td>
+			</tr>
+			<tr ng-repeat="thread1 in threads1" class="featuredThreads">
+				<td><a href="/#/thread/{{ thread1.id }}" class="emailStyle">{{ thread1.title }}</a></td>
+				<td>{{ thread1.author }}</td>
+				<td>{{ thread1.posts }}</td>
+				<td>{{ thread1.createdAt | date : 'short' }}</td>
+			</tr>
+		</table>
+		<table>
+			<tr id="tableHead">
+				<td>General Threads: Community</td>
+				<td>Original Creator</td>
+				<td>Replies</td>
+				<td>Date Created</td>
+			</tr>
+			<tr ng-repeat="thread2 in threads2" class="featuredThreads">
+				<td><a href="/#/thread/{{ thread2.id }}" class="emailStyle">{{ thread2.title }}</a></td>
+				<td>{{ thread2.author }}</td>
+				<td>{{ thread2.posts }}</td>
+				<td>{{ thread2.createdAt | date : 'short' }}</td>
+			</tr>
+		</table>
+	</div>

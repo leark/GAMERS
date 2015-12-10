@@ -1,0 +1,22 @@
+<div id="homepageStuff">
+	<div class="container" id="centerTitle">
+		<h4>Welcome to GAMERS!</h4>
+		<h4>Below is our Featured Forum</h4>
+	</div>
+	<div id="listShowArea">
+		<table>
+			<tr id="tableHead">
+				<td>Threads</td>
+				<td>Original Creator</td>
+				<td>Replies</td>
+				<td>Date Created</td>
+			</tr>
+			<tr ng-repeat="thread2 in threads2" class="featuredThreads">
+				<td><a href="/#/thread/{{ thread2.id }}" class="emailStyle">{{ thread2.title }}</a></td>
+				<td>{{ thread2.author }}</td>
+				<td>{{ thread2.posts }}</td>
+				<td>{{ thread2.createdAt | date : 'short' }}</td>
+			</tr>
+		</table>
+	</div>
+</div>
