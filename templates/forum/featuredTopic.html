@@ -2,11 +2,11 @@
 	<div class="container" id="centerTitle">
 		<h4>Welcome to GAMER Group!</h4>
 		<h4>Below is our Featured Forum</h4>
-		<div class="form-group">
-		  <div class="col-sm-offset-2 col-sm-10 center-block" >
-		     <a ui-sref="threads" class="nav"><button type="submit" class="btn btn-default">Create a New Thread</button></a>
+	</div>
+	<div class="form-group">
+		  <div class="text-center" ng-show='!showLogin' >
+		    <a ui-sref="newThread" class="nav"><label type="button" class="btn btn-default .btm-sm">Create a New Thread</label></a>
 		  </div>
-		</div>
 	</div>
 	<div id="listShowArea">
 		<table>

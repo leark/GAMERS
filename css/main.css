@@ -90,6 +90,7 @@ ul {
 	padding-left: 15px;
 }
 
+
 #center {
 	margin-top: 0px;
 	position: relative;
@@ -105,12 +106,16 @@ h1#generals:hover {
 	color:#A3B1BD;
 }
 
-button {
-	color:black;
+.log {
+	color:white;
+	background-color: #333A40;
+	border-raidus:0px;
 }
 
 #center, #head, #left, #nav, #right, #titleleft, #titleright {
-	background-color: #292929;
+	background-color: #24282B;
+
+
 }
 
 #center, #left, #right {
@@ -130,6 +135,12 @@ button {
 	width: 50%;
 }
 
+.threadCreator, .threadCreator:hover {
+	margin-bottom:12px;
+	display:block;
+	outline: none;
+}
+}
 
 .threadUser {
 	background-color: #747F90;
@@ -184,6 +195,9 @@ a, a:visited, a:link {
 	width: 500px;
 }
 
+#threadButton {
+	margin-left:0px;
+}
 
 #gamersDesc {
 	padding: 7px;
@@ -222,6 +236,11 @@ a, a:visited, a:link {
 #titleleft, #titleright {
 	display: none;
 }
+
+/*.btn, .btn:hover {
+	margin:0px auto;
+	background-color: #333A40;
+}*/
 
 .emailStyle, .sidebar:hover {
 	text-decoration: underline;
@@ -275,6 +294,8 @@ a, a:visited, a:link {
 	float: right;
 }
 
+
+
 /* CSS that changes when the screen is smaller than 1230px */
 @media screen and (max-width: 1230px) {
 	#center {
@@ -291,6 +312,10 @@ a, a:visited, a:link {
 
 	#left, #right {
 		width: 170px;
+	}
+
+	.col-sm-offset-2 {
+		margin-left: auto;
 	}
 }
 
