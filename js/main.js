@@ -114,7 +114,6 @@ myApp.config(function($stateProvider) {
 		$scope.showLogin = true;
 		$scope.$digest();
 	})
-
 })
 
 // loads after page is done loading
