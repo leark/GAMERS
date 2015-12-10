@@ -9,7 +9,7 @@
 				<td>Date Created</td>
 			</tr>
 			<tr ng-repeat="thread1 in threads1" class="featuredThreads">
-				<td><a href="/#/thread/{{ thread1.id }}">{{ thread1.title }}</a></td>
+				<td><a href="/#/thread/{{ thread1.id }}" class="emailStyle">{{ thread1.title }}</a></td>
 				<td>{{ thread1.author }}</td>
 				<td>{{ thread1.posts }}</td>
 				<td>{{ thread1.createdAt | date : 'short' }}</td>
@@ -23,7 +23,7 @@
 				<td>Date Created</td>
 			</tr>
 			<tr ng-repeat="thread2 in threads2" class="featuredThreads">
-				<td><a href="/#/thread/{{ thread2.id }}">{{ thread2.title }}</a></td>
+				<td><a href="/#/thread/{{ thread2.id }}" class="emailStyle">{{ thread2.title }}</a></td>
 				<td>{{ thread2.author }}</td>
 				<td>{{ thread2.posts }}</td>
 				<td>{{ thread2.createdAt | date : 'short' }}</td>

@@ -12,7 +12,7 @@
 				<td>Date Created</td>
 			</tr>
 			<tr ng-repeat="thread2 in threads2" class="featuredThreads">
-				<td><a href="/#/thread/{{ thread2.id }}">{{ thread2.title }}</a></td>
+				<td><a href="/#/thread/{{ thread2.id }}" class="emailStyle">{{ thread2.title }}</a></td>
 				<td>{{ thread2.author }}</td>
 				<td>{{ thread2.posts }}</td>
 				<td>{{ thread2.createdAt | date : 'short' }}</td>
