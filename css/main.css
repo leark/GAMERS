@@ -23,6 +23,11 @@ button, #leftInline, .newPostLabel, .threadList {
 	text-align: left;
 }
 
+#errorMessage {
+	color: white;
+	text-align: center;
+}
+
 form {
 	margin: 15px;
 }
