@@ -219,10 +219,10 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 })
 
-$scope.reloadCtrl = function(){
-		console.log('reloading...');
-		$route.reload();
-	})
+// $scope.reloadCtrl = function(){
+// 		console.log('reloading...');
+// 		$route.reload();
+// 	})
 
 
 // loads after page is done loading
