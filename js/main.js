@@ -104,6 +104,24 @@ myApp.config(function($stateProvider) {
 	$scope.name = "stuff";
 	$scope.posts = {};
 	
+	var forumName;
+
+	$http({
+		url: "https://disqus.com/api/3.0/threads/details.json",
+		method: "GET",
+		params: {
+			api_key: API_KEY,
+			thread: THREAD_ID
+		}
+	}).success(function(response) {
+		forumName = response.response.forum;
+		var ref = new Firebase("https://gameruw.firebaseio.com/");
+		var forum = $firebaseArray(ref.child(forumName));
+		forum.$loaded().then(function (response) { 
+			$scope.first = forum.$getRecord(THREAD_ID);
+		})
+	})
+
 	//example urls:
 	// http://localhost:8080/#/thread/4367055812
 	// http://localhost:8080/#/thread/4367336827
@@ -145,17 +163,8 @@ myApp.config(function($stateProvider) {
 		}).success(function() {
 			$scope.getPosts;
 
-			$http({
-				url: "https://disqus.com/api/3.0/threads/details.json",
-				method: "GET",
-				params: {
-					api_key: API_KEY,
-					thread: id
-				}
-			}).success(function(response) {
-				var threadRef = new Firebase('https://gameruw.firebaseio.com/' + response.response.forum + '/' + id);
-				threadRef.update({ recent: Firebase.ServerValue.TIMESTAMP });
-			})
+			var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
+			threadRef.update({ recent: Firebase.ServerValue.TIMESTAMP });
 			
 			setTimeout(function(){
 			    window.location.reload(true);
@@ -225,12 +234,11 @@ myApp.config(function($stateProvider) {
 .controller('ModeratorController', function($scope, $firebaseArray) {
 	ref = new Firebase("https://gameruw.firebaseio.com/");
 	var forums = $firebaseArray(ref);
-	console.log(forums);
+	
 	forums.$loaded().then(function (response) {
 		var general = response.$getRecord("gamergroupgeneral");
 		var blog = response.$getRecord("gamergroupblog");
 		$scope.forums = [general, blog];
-		console.log($scope.forums);
 	})
 })
 
