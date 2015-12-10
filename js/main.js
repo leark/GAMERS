@@ -12,8 +12,15 @@ myApp.config(function($stateProvider) {
     $stateProvider
 	.state('home', {
 		url:'',
-		templateUrl: 'templates/forum/featuredTopic.html',
+		templateUrl: 'templates/forum/home.html',
 		controller: 'HomeController',
+	})
+
+
+	.state('featuredTopic', {
+		url:'/featuredTopic',
+		templateUrl: 'templates/forum/featuredTopic.html',
+		controller: 'featuredTopicController',
 	})
 
 	.state('newThread', {
@@ -90,6 +97,8 @@ myApp.config(function($stateProvider) {
 .controller('GeneralController', function($scope){})
 
 .controller('BlogsController', function($scope){})
+
+.controller('featuredContentController', function($scope){})
 
 .controller('ThreadController', function($scope, $http, $stateParams, $firebaseArray) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
