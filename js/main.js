@@ -93,19 +93,6 @@ myApp.config(function($stateProvider) {
 	$('#login').click(function() {
 		ref = new Firebase("https://gameruw.firebaseio.com");
 		ref.authWithOAuthPopup("facebook", function(error, authData) {
-<<<<<<< HEAD
-		  if (error) {
-		    console.log("Login Failed!", error);
-		  } else {
-		  	$scope.showLogin = false;
-		  	$scope.$digest();
-		    console.log("Authenticated successfully with payload:", authData);
-		    var scope = angular.element($("body")).scope();
-    		scope.$apply(function() {
-    			scope.userName = authData.facebook.displayName;
-			})
-		  }
-=======
 			if (error) {
 		    	console.log("Login Failed!", error);
 			} else {
@@ -124,7 +111,6 @@ myApp.config(function($stateProvider) {
 		}, {
 			remember: "default",
 			scope: "email"
->>>>>>> 55c653467816042e29c5a0695ec3a2a14278e2fa
 		});	
 	})
 
