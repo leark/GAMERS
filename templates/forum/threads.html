@@ -10,7 +10,6 @@
 			<p>placeholder</p>
 		</div>
 	</div>
-
 <div class="container" ng-init="getPosts()" id="threadMain">
 	<div class="post" ng-repeat="post in posts">
 		<div class="threadUser">
@@ -24,7 +23,6 @@
 
 <div class="form-group">
     <label for="comment" class="control-label"><span ng-show="!showLogin">Comment as {{ userName }}</span><span ng-show="showLogin">Sign in to comment</span></label>
-
 	<div id="replyComment" class="col-sm-10">
 		<textarea class="form-control" id="replyText" placeholder="Reply with a Comment" rows="3"></textarea>
 	</div>

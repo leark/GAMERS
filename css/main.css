@@ -37,8 +37,17 @@ h5 {
 	margin-bottom: 0;
 }
 
-label {
-	margin-left: 10px;
+.newPostArea {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+#submit {
+	margin-left: 5%;
+}
+
+.newPostLabel {
+	text-align: left;
 }
 
 p {
