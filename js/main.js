@@ -177,8 +177,7 @@ myApp.config(function($stateProvider) {
 			thread: THREAD_ID,
 			message: post,
 			author_name: authorName,
-			author_email: authorEmail,
-			strict: 1
+			author_email: authorEmail
 		}, function(response) {
 			$scope.getPosts;
 			var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
