@@ -7,39 +7,19 @@
 		  </div>
 	</div>
 </div>
-
-<!-- <div id="listShowArea">
-	<table>
-		<tr id="tableHead">
-			<td>Blogs</td>
-			<td>Original Creator</td>
-			<td>Replies</td>
-			<td>Date Created</td>
-		</tr>
-		<tr ng-repeat="thread3 in threads3" class="featuredThreads">
-			<td><a href="/#/thread/{{ thread3.id }}" class="emailStyle">{{ thread3.title }}</a></td>
-			<td>{{ thread3.author }}</td>
-			<td>{{ thread3.posts }}</td>
-			<td>{{ thread3.createdAt | date : 'short' }}</td>
-		</tr>
-	</table>
-</div>
-
-// -->
-
 <div id="listShowArea">
 	<table>
 		<tr id="tableHead">
 			<td>Blogs: Featured</td>
 			<td>Original Creator</td>
 			<td>Replies</td>
-			<td>Date Created</td>
+			<td>Last Updated</td>
 		</tr>
-		<tr ng-repeat="thread4 in threads4" class="featuredThreads">
-			<td><a href="/#/thread/{{ thread4.id }}" class="emailStyle">{{ thread4.title }}</a></td>
-			<td>{{ thread4.author }}</td>
-			<td>{{ thread4.posts }}</td>
-			<td>{{ thread4.createdAt | date : 'short' }}</td>
+		<tr ng-repeat="blog in blogs | filter:featured" class="featuredThreads">
+			<td><a href="/#/thread/{{ blog.$id }}" class="emailStyle">{{ blog.title }}</a></td>
+			<td>{{ blog.author }}</td>
+			<td></td>
+			<td>{{ blog.recent | date : 'short' }}</td>
 		</tr>
 	</table>
 	<table>
@@ -49,11 +29,11 @@
 			<td>Replies</td>
 			<td>Date Created</td>
 		</tr>
-		<tr ng-repeat="thread3 in threads3" class="featuredThreads">
-			<td><a href="/#/thread/{{ thread3.id }}" class="emailStyle">{{ thread3.title }}</a></td>
-			<td>{{ thread3.author }}</td>
-			<td>{{ thread3.posts }}</td>
-			<td>{{ thread3.createdAt | date : 'short' }}</td>
+		<tr ng-repeat="blog in blogs | filter:!featured" class="featuredThreads">
+			<td><a href="/#/thread/{{ blog.$id }}" class="emailStyle">{{ blog.title }}</a></td>
+			<td>{{ blog.author }}</td>
+			<td></td>
+			<td>{{ blog.recent | date : 'short' }}</td>
 		</tr>
 	</table>
 </div>

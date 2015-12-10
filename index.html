@@ -76,7 +76,7 @@
 						<a ui-sref="featuredTopic"><h1>Featured Topic</h1></a>
 						<p>
 							<ul>
-								<li ng-repeat="feature in featured | limitTo:12 | orderBy:'-recent'">
+								<li ng-repeat="feature in featured | limitTo:12 | orderBy:'-recent' | filter:featured">
 									<a ng-href="http://localhost:8080/#/thread/{{feature.$id}}">{{feature.title}}</a>
 								</li>
 							</ul>
