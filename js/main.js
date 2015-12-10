@@ -84,12 +84,12 @@ myApp.config(function($stateProvider) {
 
 .controller('BlogsController', function($scope){})
 
-.controller('ThreadController', function($scope, $http, $stateParams) {
+.controller('ThreadController', function($scope, $http, $stateParams, $firebaseArray) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
 	var DISQUS_KEY = "E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F";
 	var FORUM_NAME = "youtatest1";
-
+	
 	var THREAD_ID = $stateParams.threadId;
 
 	$scope.name = "stuff";
@@ -123,6 +123,21 @@ myApp.config(function($stateProvider) {
 		var id = url.substr(url.lastIndexOf("/") + 1);
 
 		$http({
+			url: "https://disqus.com/api/3.0/threads/details.json",
+			method: "GET",
+			params: {
+				api_key: API_KEY,
+				thread: id
+			}
+		}).success(function(response) {
+			var forumName = response.response.forum;
+			console.log(forumName);
+			var forum = new Firebase(ref + "/" + forumName);
+			var threads = $firebaseArray(forum);
+			console.log(threads);
+		})
+
+		/*$http({
 			url: "https://disqus.com/api/3.0/posts/create.json",
 			method: "POST",
 			params: {
@@ -134,10 +149,24 @@ myApp.config(function($stateProvider) {
 			}
 		}).success(function() {
 			$scope.getPosts;
-			setTimeout(function(){
+
+			$http({
+				url: "https://disqus.com/api/3.0/threads/details.json",
+				method: "GET",
+				params: {
+					api_key: API_KEY,
+					thread: id
+				}
+			}).success(function(response) {
+				$scope.forumName = response.response.forum;
+			})
+
+			$scope.threads = $firebaseArray(ref + "/" + $scope.forumName);
+			console.log($scope.threads);
+			/*setTimeout(function(){
 			    window.location.reload(true);
-			}, 800);
-		})
+			}, 800);*/
+		//})
 	}
 })
 
