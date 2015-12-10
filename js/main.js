@@ -194,7 +194,7 @@ myApp.config(function($stateProvider) {
 				author_name: $scope.userName,
 				author_email: $scope.userEmail
 			}
-		}).success(function() {
+		}).then(function successCallback(response) {
 			$scope.getPosts;
 
 			var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
@@ -204,7 +204,9 @@ myApp.config(function($stateProvider) {
 			setTimeout(function(){
 			    window.location.reload(true);
 			}, 800);
-		})
+		}, function errorCallback(response) {
+			console.log(response);
+		});
 	}
 })
 
