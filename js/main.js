@@ -169,42 +169,42 @@ myApp.config(function($stateProvider) {
 		console.log(authorName);
 		console.log(authorEmail);
 
-		$.post("https://disqus.com/api/3.0/posts/create.json", 
-		{	api_key: API_KEY,
-			thread: THREAD_ID,
-			message: post,
-			author_name: authorName,
-			author_email: authorEmail
-		}, function(response) {
-			$scope.getPosts;
-			var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
-			threadRef.update({ replies: replies, recent: Firebase.ServerValue.TIMESTAMP });
-			setTimeout(function() {
-			    window.location.reload(true);
-			}, 800);
-		})	
-
-		// $http({
-		// 	url: "https://disqus.com/api/3.0/posts/create.json",
-		// 	method: "POST",
-		// 	params: {
-		// 		api_key: DISQUS_KEY,
-		// 		message: post,
-		// 		thread: id,
-		// 		author_name: $scope.userName,
-		// 		author_email: $scope.userEmail
-		// 	}
-		// }).success(function() {
+		// $.post("https://disqus.com/api/3.0/posts/create.json", 
+		// {	api_key: API_KEY,
+		// 	thread: THREAD_ID,
+		// 	message: post,
+		// 	author_name: authorName,
+		// 	author_email: authorEmail
+		// }, function(response) {
 		// 	$scope.getPosts;
-
 		// 	var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
-
 		// 	threadRef.update({ replies: replies, recent: Firebase.ServerValue.TIMESTAMP });
-
-		// 	setTimeout(function(){
+		// 	setTimeout(function() {
 		// 	    window.location.reload(true);
 		// 	}, 800);
-		// })
+		// })	
+
+		$http({
+			url: "https://disqus.com/api/3.0/posts/create.json",
+			method: "POST",
+			params: {
+				api_key: API_KEY,
+				message: post,
+				thread: id,
+				author_name: $scope.userName,
+				author_email: $scope.userEmail
+			}
+		}).success(function() {
+			$scope.getPosts;
+
+			var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
+
+			threadRef.update({ replies: replies, recent: Firebase.ServerValue.TIMESTAMP });
+
+			setTimeout(function(){
+			    window.location.reload(true);
+			}, 800);
+		})
 	}
 })
 
