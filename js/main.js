@@ -3,11 +3,9 @@ var ref;
 
 myApp.config(function($stateProvider) {
 
-
   // Prevent $urlRouter from automatically intercepting URL changes;
   // this allows you to configure custom behavior in between
   // location changes and route synchronization:
- 
 
     $stateProvider
 	.state('home', {
@@ -45,11 +43,17 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'templates/forum/blogs.html',
 		controller: "BlogsController"
 	})
+
+	.state('moderator', {
+		url: '/moderator',
+		templateUrl: 'templates/moderator.html',
+		controller: "ModeratorController"
+	})
 }) 
 
 .controller('HomeController', function($scope){})
 
-.controller('NewThreadController', function($scope, $http, $firebaseArray) {
+.controller('NewThreadController', function($scope, $firebaseArray) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
 	$scope.submit = function() {
@@ -69,18 +73,17 @@ myApp.config(function($stateProvider) {
 			console.log(data);
 			var threads = ref.child($scope.forumSelect);
 			$scope.threads = $firebaseArray(threads);
-			$scope.threads.$add({
-	    		title: $scope.threadTitle,
+			var thread = threads.child(data.id);
+	  		thread.set({
+				title: $scope.threadTitle,
 	    		message: $scope.threadMessage,
-	    		disqusId: data.id,
 	    		author: $scope.userName,
 	    		featured: false,
 	    		forum: $scope.forumSelect,
 	    		recent: Firebase.ServerValue.TIMESTAMP
-		    }).then( function() {
-	    		$scope.threadTitle = "";
-	    		$scope.threadMessage = "";
 		    })
+    		$scope.threadTitle = "";
+    		$scope.threadMessage = "";
 		})	
 	}
 })
@@ -219,18 +222,22 @@ myApp.config(function($stateProvider) {
 	})
 })
 
-// $scope.reloadCtrl = function(){
-// 		console.log('reloading...');
-// 		$route.reload();
-// 	})
-
+.controller('ModeratorController', function($scope, $firebaseArray) {
+	ref = new Firebase("https://gameruw.firebaseio.com/");
+	var forums = $firebaseArray(ref);
+	console.log(forums);
+	forums.$loaded().then(function (response) {
+		var general = response.$getRecord("gamergroupgeneral");
+		var blog = response.$getRecord("gamergroupblog");
+		$scope.forums = [general, blog];
+		console.log($scope.forums);
+	})
+})
 
 // loads after page is done loading
 $(function() {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
-
-	
 
 
 	// $.get("https://disqus.com/api/3.0/users/listForums.json", {

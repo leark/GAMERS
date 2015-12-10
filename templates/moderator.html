@@ -1,0 +1,36 @@
+<div id="listShowArea">
+<details ng-repeat="forum in forums">
+	<summary class="slider">{{forum.$id}}</summary>
+	<!-- <table>
+		<tr id="tableHead">
+			<td>Featured</td>
+			<td>Title</td>
+			<td>Original Creator</td>
+			<td>Replies</td>
+			<td>Date Created</td>
+		</tr>
+		<tr ng-repeat="thread in forum" class="featuredThreads">
+			<td><a href="/#/thread/{{ thread.$id }}" class="emailStyle">{{ thread.title }}</a></td>
+			<td>{{ thread.author }}</td>
+			<td>{{  }}</td>
+			<td>{{ thread.createdAt | date : 'short' }}</td>
+		</tr>
+	</table> -->
+	<table>
+		<tr id="tableHead">
+			<td>Featured</td>
+			<td>Title</td>
+			<td>Original Creator</td>
+			<td>Replies</td>
+			<td>Date Created</td>
+		</tr>
+		<tr ng-repeat="thread in forum" class="featuredThreads">
+			<td>star</td>
+			<td><a href="/#/thread/{{ thread.$id }}" class="emailStyle">{{ thread.title }}</a></td>
+			<td>{{ thread.author }}</td>
+			<td>{{ }}</td>
+			<td>{{ thread.recent | date : 'short' }}</td>
+		</tr>
+	</table>
+</details>
+</div>
