@@ -97,9 +97,17 @@ myApp.config(function($stateProvider) {
 
 .controller('IrcController', function($scope){})
 
-.controller('GeneralController', function($scope){})
+.controller('GeneralController', function($scope, $firebaseArray){
+	ref = new Firebase("https://gameruw.firebaseio.com/");
+	var threads = ref.child('gamergroupgeneral');
+	$scope.generals = $firebaseArray(threads);
+})
 
-.controller('BlogsController', function($scope){})
+.controller('BlogsController', function($scope, $firebaseArray){
+	ref = new Firebase("https://gameruw.firebaseio.com/");
+	var threads = ref.child('gamergroupblog');
+	$scope.blogs = $firebaseArray(threads);
+})
 
 .controller('featuredContentController', function($scope){})
 
