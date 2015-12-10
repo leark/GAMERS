@@ -168,7 +168,7 @@ myApp.config(function($stateProvider) {
 		var authorEmail = $scope.userEmail;
 
 		$.post("https://disqus.com/api/3.0/posts/create.json", 
-		{	api_key: DISQUS_KEY,
+		{	api_key: API_KEY,
 			thread: id,
 			message: post,
 			author_name: authorName,
