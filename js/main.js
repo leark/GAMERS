@@ -211,6 +211,7 @@ myApp.config(function($stateProvider) {
 		ref.unauth();
 		$scope.showLogin = true;
 		$scope.$digest();
+		window.location.reload(true);
 	})
 })
 

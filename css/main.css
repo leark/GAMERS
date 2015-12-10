@@ -12,7 +12,7 @@ body{
 }
 
 a, a:visited, body, h1, #centerTitle, .nav, .nav:active, .nav:hover, .nav:visited, .sidebar {
-	color:white;
+	color: white;
 }
 
 button {
@@ -107,7 +107,6 @@ button {
 
 #center, #head, #left, #nav, #right, #titleleft, #titleright {
 	background-color: #292929;
-
 }
 
 #center, #left, #right {
