@@ -281,6 +281,7 @@ a, a:visited, a:link {
 
 .threadTitle {
 	text-align: center;
+	background-color: black;
 }
 
 .threadUser {
