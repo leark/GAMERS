@@ -164,13 +164,15 @@ myApp.config(function($stateProvider) {
 		var post = $('#replyText').val();
 		var url = window.location.href;
 		var id = url.substr(url.lastIndexOf("/") + 1);
+		var authorName = $scope.userName;
+		var authorEmail = $scope.userEmail;
 
 		$.post("https://disqus.com/api/3.0/posts/create.json", 
 		{	api_key: DISQUS_KEY,
 			thread: id,
 			message: post,
-			author_name: $scope.userName,
-			author_email: $scope.userEmail
+			author_name: authorName,
+			author_email: authorEmail
 		}, function(response) {
 			$scope.getPosts;
 			var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
