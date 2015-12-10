@@ -123,21 +123,6 @@ myApp.config(function($stateProvider) {
 		var id = url.substr(url.lastIndexOf("/") + 1);
 
 		$http({
-			url: "https://disqus.com/api/3.0/threads/details.json",
-			method: "GET",
-			params: {
-				api_key: API_KEY,
-				thread: id
-			}
-		}).success(function(response) {
-			var forumName = response.response.forum;
-			console.log(forumName);
-			var forum = new Firebase(ref + "/" + forumName);
-			var threads = $firebaseArray(forum);
-			console.log(threads);
-		})
-
-		/*$http({
 			url: "https://disqus.com/api/3.0/posts/create.json",
 			method: "POST",
 			params: {
@@ -158,15 +143,14 @@ myApp.config(function($stateProvider) {
 					thread: id
 				}
 			}).success(function(response) {
-				$scope.forumName = response.response.forum;
+				var threadRef = new Firebase('https://gameruw.firebaseio.com/' + response.response.forum + '/' + id);
+				threadRef.update({ recent: Firebase.ServerValue.TIMESTAMP });
 			})
-
-			$scope.threads = $firebaseArray(ref + "/" + $scope.forumName);
-			console.log($scope.threads);
-			/*setTimeout(function(){
+			
+			setTimeout(function(){
 			    window.location.reload(true);
-			}, 800);*/
-		//})
+			}, 800);
+		})
 	}
 })
 
@@ -183,8 +167,6 @@ myApp.config(function($stateProvider) {
 	$scope.blogs = $firebaseArray(blogs);
 	$scope.featured = $firebaseArray(featured);
 	$scope.generals = $firebaseArray(generals);
-
-
 
 	ref = new Firebase("https://gameruw.firebaseio.com");
 	ref.onAuth(function(authData) {
