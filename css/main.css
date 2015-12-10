@@ -147,6 +147,10 @@ button {
 	clear: both;
 }
 
+.forumselect {
+	color: black;
+}
+
 #gamersDesc {
 	padding: 7px;
 }
