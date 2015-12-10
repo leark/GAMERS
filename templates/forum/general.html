@@ -18,7 +18,7 @@
 			<tr ng-repeat="general in generals | filter:featured" class="featuredThreads">
 				<td><a href="/#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
 				<td>{{ general.author }}</td>
-				<td></td>
+				<td>{{ general.replies }}</td>
 				<td>{{ general.recent | date : 'short'  }}</td>
 			</tr>
 		</table>
@@ -32,7 +32,7 @@
 			<tr ng-repeat="general in generals | filter:!featured" class="featuredThreads">
 				<td><a href="/#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
 				<td>{{ general.author }}</td>
-				<td></td>
+				<td>{{ general.replies }}</td>
 				<td>{{ general.recent | date : 'short'  }}</td>
 			</tr>
 		</table>
