@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
 body{
 	font-family: Arial;
 	font-size: 11px;
@@ -23,6 +25,7 @@ h1 {
 }
 
 h4 {
+	font-family: 'press start 2p', cursive;
 	text-align: center;
 }
 
@@ -147,6 +150,10 @@ ul {
 
 a, a:visited {
 	color:white;
+}
+
+.nav {
+	font-family: 'press start 2P', cursive;
 }
 
 .nav, .nav:visited {
