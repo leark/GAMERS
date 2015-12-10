@@ -36,15 +36,8 @@
 
 
 				<div id="left">
-					<div id="leftbar"> <!--ng-repeat='forum in forums'-->
-						<!--<h1>{{forum.category}}</h1>
-						<p>
-							<strong>{{forum.name}}</strong><br />
-							<a href="" class="sidebar" ng-repeat="thread in threads">WOOHOO</a><br />
-							<a href="" class="sidebar">WOOHOO</a>
-						</p> -->
-
-						<h1>General</h1>
+					<div id="leftbar"> 
+						<a ui-sref="general"><h1>General</h1></a>						
 						<p>
 							<ul>
 								<li><strong>Featured</strong>
@@ -60,7 +53,7 @@
 							</ul>
 						</p>
 
-						<h1>Blog</h1>
+						<a ui-sref="blogs"><h1>Blog</h1></a>
 						<p>
 							<ul>
 								<li><strong>Example</strong>

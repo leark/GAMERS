@@ -26,14 +26,29 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'templates/forum/irc.html',
 		controller: 'IrcController'
 	})
+
+	.state('general', {
+		url: '/general',
+		templateUrl: 'templates/forum/general.html',
+		controller: "GeneralController"
+	})
+
+	.state('blogs', {
+		url: '/blogs',
+		templateUrl: 'templates/forum/blogs.html',
+		controller: "BlogsController"
+	})
 }) 
 
 .controller('HomeController', function($scope){})
 
 .controller('NewPostController', function($scope){})
 
-.controller('IrcController', function($scope){
-})
+.controller('IrcController', function($scope){})
+
+.controller('GeneralController', function($scope){})
+
+.controller('BlogsController', function($scope){})
 
 .controller('ThreadController', function($scope, $http, $stateParams) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";

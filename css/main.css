@@ -22,6 +22,10 @@ h1 {
 	text-align: center;
 }
 
+h4 {
+	text-align: center;
+}
+
 h5 {
 	background-color: black;
 	padding: 10px;
@@ -46,6 +50,7 @@ table {
 	width: 98%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 10px;
 }
 
 td {
