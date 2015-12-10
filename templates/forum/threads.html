@@ -5,7 +5,7 @@
 		</div>
 		<div class="post">
 			<div class="threadUser">
-				<span>{{ first.author }}</span><span class="timeStamp">{{ first.recent }}</span>
+				<span>{{ first.author }}</span><span class="timeStamp">{{ first.recent | date : 'short' }}</span>
 			</div>
 			<div class="threadContent">
 				<p>{{ first.message }}</p>
