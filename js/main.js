@@ -191,7 +191,6 @@ myApp.config(function($stateProvider) {
 			params: {
 				api_key: DISQUS_KEY,
 				api_secret: SECRET_KEY,
-				access_token: ACCESS_TOKEN,
 				message: post,
 				thread: id,
 				author_name: $scope.userName,
