@@ -9,7 +9,7 @@
 			<td>Replies</td>
 			<td>Date Created</td>
 		</tr>
-		<tr ng-repeat="thread in forum | orderBy: '-recent'" ng-if="thread.featured" class="featuredThreads">
+		<tr ng-repeat="thread in forum | orderBy:'-recent'" ng-if="thread.featured" class="featuredThreads">
 			<td>star</td>
 			<td><a href="/#/thread/{{ thread.$id }}" class="emailStyle">{{ thread.title }}</a></td>
 			<td>{{ thread.author }}</td>
@@ -25,7 +25,7 @@
 			<td>Replies</td>
 			<td>Date Created</td>
 		</tr>
-		<tr ng-repeat="thread in forum | orderBy: '-recent'" ng-if="!thread.featured" class="featuredThreads">
+		<tr ng-repeat="thread in forum | orderBy:'-recent'" ng-if="!thread.featured" class="featuredThreads">
 			<td>star</td>
 			<td><a href="/#/thread/{{ thread.$id }}" class="emailStyle">{{ thread.title }}</a></td>
 			<td>{{ thread.author }}</td>

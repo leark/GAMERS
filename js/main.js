@@ -213,6 +213,8 @@ myApp.config(function($stateProvider) {
 .controller('myController', function($scope, $firebaseArray) {
 	$scope.forums = {};
 	$scope.showLogin = true;
+	$scope.numLimitNFeature = 6;
+	$scope.numLimitFeature = 2;
 
 	var ref = new Firebase("https://gameruw.firebaseio.com/");
 
