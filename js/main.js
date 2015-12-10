@@ -93,7 +93,9 @@ myApp.config(function($stateProvider) {
 			}
 		}).success(function() {
 			$scope.getPosts;
-			document.location.reload(true);
+			setTimeout(function(){
+			    window.location.reload(true);
+			}, 800);
 		})
 	}
 })
