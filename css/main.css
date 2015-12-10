@@ -19,12 +19,13 @@ form {
 h1 {
 	background-color: black;
 	color: white;
-	font-size: 26px;
+	font-size: 22px;
 	margin: 0px;
+	padding: 5px;
 	text-align: center;
 }
 
-h4 {
+h1, h4 {
 	font-family: 'press start 2p', cursive;
 	text-align: center;
 }
@@ -159,9 +160,11 @@ a, a:visited {
 .nav, .nav:visited {
 	color: white;
 	display: inline-block;
-	font-size: 24px;
+	font-size: 20px;
+	padding-bottom: 2px;
 	padding-left: 15px;
 	padding-right: 15px;
+	padding-top: 2px;
 	text-decoration: none;
 	text-transform: uppercase;
 }
