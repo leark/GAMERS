@@ -48,12 +48,12 @@
 						<a ui-sref="general"><h1 id="generals">General</h1></a>						
 						<p>
 							<ul><strong>Featured</strong>
-								<div ng-repeat="general in generals | orderBy:'-recent'" ng-if="!featured">
+								<div ng-repeat="general in generals | limitTo:6 | orderBy:'-recent'" ng-if="!featured">
 									<a ng-href="http://localhost:8080/#/thread/{{general.disqusId}}">{{general.title}}</a>
 								</div>
 							</ul>
 							<ul><strong>Community</strong>
-								<div ng-repeat="general in generals | orderBy:'-recent'" ng-if="featured">
+								<div ng-repeat="general in generals | limitTo:6 | orderBy:'-recent'" ng-if="featured">
 									<a ng-href="http://localhost:8080/#/thread/{{general.disqusId}}">{{general.title}}</a>
 								</div>
 							</ul>
@@ -62,12 +62,12 @@
 						<a ui-sref="blogs"><h1>Blog</h1></a>
 						<p>
 							<ul><strong>Featured</strong>
-								<li ng-repeat="blog in blogs | orderBy:'-recent'" ng-if="!featured">
+								<li ng-repeat="blog in blogs | limitTo:6 | orderBy:'-recent'" ng-if="!featured">
 									<a ng-href="http://localhost:8080/#/thread/{{blog.disqusId}}">{{blog.title}}</a>
 								</li>
 							</ul>
 							<ul><strong>Community</strong>
-								<li ng-repeat="blog in blogs | orderBy:'-recent'" ng-if="featured">
+								<li ng-repeat="blog in blogs | limitTo:6 | orderBy:'-recent'" ng-if="featured">
 									<a ng-href="http://localhost:8080/#/thread/{{blog.disqusId}}">{{blog.title}}</a>
 								</li>
 							</ul>
@@ -76,7 +76,7 @@
 						<a ui-sref="home"><h1>Featured Topic</h1></a>
 						<p>
 							<ul>
-								<li ng-repeat="feature in featured | limitTo:7 && orderBy:'-recent'">
+								<li ng-repeat="feature in featured | limitTo:12 | orderBy:'-recent'">
 									<a ng-href="http://localhost:8080/#/thread/{{feature.disqusId}}">{{feature.title}}</a>
 								</li>
 							</ul>
