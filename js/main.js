@@ -101,8 +101,19 @@ myApp.config(function($stateProvider) {
 .controller('myController', function($scope) {
 	$scope.forums = {};
 	$scope.showLogin = true;
+	ref = new Firebase("https://gameruw.firebaseio.com");
+	ref.onAuth(function(authData) {
+		  if (authData) {
+		    $scope.showLogin = false;
+		    var scope = angular.element($("body")).scope();
+	    	$scope.userName = authData.facebook.displayName;
+		  } else {
+		    $scope.showLogin = true;
+		  }
+	});
 	$('#login').click(function() {
-		ref = new Firebase("https://gameruw.firebaseio.com");
+		//ref = new Firebase("https://gameruw.firebaseio.com");
+
 		ref.authWithOAuthPopup("facebook", function(error, authData) {
 			if (error) {
 		    	console.log("Login Failed!", error);
