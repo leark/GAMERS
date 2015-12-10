@@ -165,27 +165,42 @@ myApp.config(function($stateProvider) {
 		var url = window.location.href;
 		var id = url.substr(url.lastIndexOf("/") + 1);
 
-		$http({
-			url: "https://disqus.com/api/3.0/posts/create.json",
-			method: "POST",
-			params: {
-				api_key: DISQUS_KEY,
-				message: post,
-				thread: id,
-				author_name: $scope.userName,
-				author_email: $scope.userEmail
-			}
-		}).success(function() {
+		$.post("https://disqus.com/api/3.0/posts/create.json", 
+		{	api_key: DISQUS_KEY,
+			thread: id,
+			message: post,
+			author_name: $scope.userName,
+			author_email: $scope.userEmail
+		}, function(response) {
 			$scope.getPosts;
-
 			var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
-
 			threadRef.update({ replies: replies, recent: Firebase.ServerValue.TIMESTAMP });
-
-			setTimeout(function(){
+			setTimeout(function() {
 			    window.location.reload(true);
 			}, 800);
-		})
+		})	
+
+		// $http({
+		// 	url: "https://disqus.com/api/3.0/posts/create.json",
+		// 	method: "POST",
+		// 	params: {
+		// 		api_key: DISQUS_KEY,
+		// 		message: post,
+		// 		thread: id,
+		// 		author_name: $scope.userName,
+		// 		author_email: $scope.userEmail
+		// 	}
+		// }).success(function() {
+		// 	$scope.getPosts;
+
+		// 	var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
+
+		// 	threadRef.update({ replies: replies, recent: Firebase.ServerValue.TIMESTAMP });
+
+		// 	setTimeout(function(){
+		// 	    window.location.reload(true);
+		// 	}, 800);
+		// })
 	}
 })
 
