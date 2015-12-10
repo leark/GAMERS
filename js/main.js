@@ -121,6 +121,7 @@ myApp.config(function($stateProvider) {
 		var url = window.location.href;
 		var id = url.substr(url.lastIndexOf("/") + 1);
 
+
 		$http({
 			url: "https://disqus.com/api/3.0/posts/create.json",
 			method: "POST",
