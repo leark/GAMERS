@@ -73,7 +73,7 @@
 							</ul>
 						</p>
 
-						<a ui-sref="home"><h1>Featured Topic</h1></a>
+						<a ui-sref="featuredTopic"><h1>Featured Topic</h1></a>
 						<p>
 							<ul>
 								<li ng-repeat="feature in featured | limitTo:12 | orderBy:'-recent'">
@@ -84,6 +84,11 @@
 					</div>
 				</div>
 				<div id="center">
+				<div id="homepageStuff">
+					<div class="container" id="centerTitle">
+						<h4>Welcome to GAMER Group!</h4>
+					</div>
+				</div>
 					<div ui-view></div>
 				</div>
 
