@@ -23,7 +23,10 @@ h1 {
 }
 
 h5 {
-	
+	background-color: black;
+	padding: 10px;
+	margin: 10px;
+	margin-bottom: 0;
 }
 
 p {
@@ -33,6 +36,34 @@ p {
 
 strong {
 	font-size: 12px;
+}
+
+.featuredThreads {
+	background: gray;
+}
+
+table {
+	width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td {
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#tableHead {
+	background-color: black;
+}
+
+.featuredThreads:nth-child(odd) {
+	background: lightgray;
+}
+
+#listShowArea {
+	margin-bottom: 10px;
 }
 
 #replyComment {
@@ -239,7 +270,10 @@ a, a:visited {
 	}
 
 	h5 {
-		
+		background-color: black;
+		padding: 10px;
+		margin: 10px;
+		margin-bottom: 0;
 	}
 }
 

@@ -92,7 +92,6 @@ myApp.config(function($stateProvider) {
 })
 
 .controller('myController', function($scope) {
-
 	$scope.forums = {};
 	$scope.showLogin = true;
 	$('#login').click(function() {
@@ -108,12 +107,8 @@ myApp.config(function($stateProvider) {
     		scope.$apply(function() {
     			scope.userName = authData.facebook.displayName;
 			})
-		    
 		  }
-
 		});	
-
-	
 	})
 
 	$('#logout').click(function() {
@@ -121,8 +116,6 @@ myApp.config(function($stateProvider) {
 		$scope.showLogin = true;
 		$scope.$digest();
 	})
-
-
 })
 
 // loads after page is done loading
@@ -161,6 +154,9 @@ $(function() {
 	var getThreads = function(data, num) {
 		var scope = angular.element($("body")).scope();
     	scope.$apply(function() {
+			for (var i =0; i < data.length; i++) {
+		    	data[i].createdAt = Date.parse(data[i].createdAt);
+		    }
     		scope[num] = data;
 		})
 	}
