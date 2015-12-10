@@ -166,10 +166,12 @@ myApp.config(function($stateProvider) {
 		var id = url.substr(url.lastIndexOf("/") + 1);
 		var authorName = $scope.userName;
 		var authorEmail = $scope.userEmail;
+		console.log(authorName);
+		console.log(authorEmail);
 
 		$.post("https://disqus.com/api/3.0/posts/create.json", 
 		{	api_key: API_KEY,
-			thread: id,
+			thread: THREAD_ID,
 			message: post,
 			author_name: authorName,
 			author_email: authorEmail
