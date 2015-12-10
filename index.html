@@ -46,7 +46,7 @@
 
 				<div id="left">
 					<div id="leftbar"> 
-						<a ui-sref="general"><h1>General</h1></a>						
+						<a ui-sref="general"><h1 id="generals">General</h1></a>						
 						<p>
 							<ul>
 								<li><strong>Featured</strong>
@@ -55,8 +55,8 @@
 									</ul>
 								</li>
 								<li><strong>Community</strong>
-									<ul ng-repeat="thread2 in threads2">
-										<li><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
+									<ul >
+										<li ng-repeat="thread2 in threads2"><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -66,8 +66,8 @@
 						<p>
 							<ul>
 								<li><strong>Example</strong>
-									<ul ng-repeat="thread3 in threads3">
-										<li><a href="/#/thread/{{ thread3.id }}" class="sidebar">{{ thread3.title }}</a></li>
+									<ul >
+										<li ng-repeat="thread3 in threads3"><a href="/#/thread/{{ thread3.id }}" class="sidebar">{{ thread3.title }}</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -77,8 +77,8 @@
 						<p>
 							<ul>
 								<li>
-									<ul ng-repeat="thread2 in threads2">
-										<li><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
+									<ul>
+										<li ng-repeat="thread2 in threads2"><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
 									</ul>
 								</li>
 							</ul>

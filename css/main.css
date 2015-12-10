@@ -55,6 +55,7 @@ button, #leftInline, .newPostLabel, .threadList {
 p {
 	padding-left: 5px;
 	padding-right: 5px;
+	color:black;
 }
 
 strong {
@@ -101,6 +102,11 @@ td {
 	margin-right: auto;
 }
 
+h1#generals:hover {
+	color:#A3B1BD;
+
+}
+
 button {
 	color:black;
 }
@@ -137,7 +143,7 @@ button {
 }
 
 .threadUser {
-	background-color: #9aacc6;
+	background-color: #747F90;
 	max-height: 30px;
 	font-size: 14px;
 	color: black;
@@ -159,8 +165,9 @@ ul {
 	padding-left: 15px;
 }
 
-a, a:visited {
-	color:white;
+a, a:visited, a:link {
+	color:#A3B1BD;
+	font-size:12px;
 }
 
 .nav, .nav:visited {
@@ -183,6 +190,8 @@ a, a:visited {
 
 #gamersDesc {
 	padding: 7px;
+	color:#A3B1BD;
+	font-size: 12px;
 }
 
 .sidebar {
