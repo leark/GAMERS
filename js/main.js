@@ -5,7 +5,7 @@ myApp.config(function($stateProvider) {
     $stateProvider
 	.state('home', {
 		url:'',
-		templateUrl: 'templates/forum/home.html',
+		templateUrl: 'templates/forum/featuredTopic.html',
 		controller: 'HomeController',
 	})
 
