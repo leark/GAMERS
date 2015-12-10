@@ -190,7 +190,7 @@ myApp.config(function($stateProvider) {
 			method: "POST",
 			params: {
 				api_key: API_KEY,
-				secret_key: SECRET_KEY,
+				api_secret: SECRET_KEY,
 				access_token: ACCESS_TOKEN,
 				message: post,
 				thread: id,
