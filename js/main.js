@@ -9,7 +9,7 @@ myApp.config(function($stateProvider) {
 
     $stateProvider
 	.state('home', {
-		url:'',
+		url:'home',
 		templateUrl: 'templates/forum/home.html',
 		controller: 'HomeController',
 	})
@@ -87,6 +87,7 @@ myApp.config(function($stateProvider) {
 	    		author: $scope.userName,
 	    		featured: false,
 	    		forum: $scope.forumSelect,
+	    		replies: 0,
 	    		recent: Firebase.ServerValue.TIMESTAMP
 		    })
     		$scope.threadTitle = "";
@@ -114,6 +115,7 @@ myApp.config(function($stateProvider) {
 	$scope.posts = {};
 	
 	var forumName;
+	var replies;
 
 	$http({
 		url: "https://disqus.com/api/3.0/threads/details.json",
@@ -128,6 +130,8 @@ myApp.config(function($stateProvider) {
 		var forum = $firebaseArray(ref.child(forumName));
 		forum.$loaded().then(function (response) { 
 			$scope.first = forum.$getRecord(THREAD_ID);
+			replies = $scope.first.replies;
+			replies++;
 		})
 	})
 
@@ -173,8 +177,9 @@ myApp.config(function($stateProvider) {
 			$scope.getPosts;
 
 			var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
-			threadRef.update({ recent: Firebase.ServerValue.TIMESTAMP });
-			
+
+			threadRef.update({ replies: replies, recent: Firebase.ServerValue.TIMESTAMP });
+
 			setTimeout(function(){
 			    window.location.reload(true);
 			}, 800);
