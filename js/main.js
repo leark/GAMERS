@@ -251,7 +251,7 @@ $(function() {
 		var scope = angular.element($("body")).scope();
     	scope.$apply(function() {
 			for (var i =0; i < data.length; i++) {
-		    	data[i].createdAt = Date.parse(data[i].createdAt);
+		    	data[i].createdAt = Date(data[i].createdAt.toLocaleString());
 		    }
     		scope[num] = data;
 		})
