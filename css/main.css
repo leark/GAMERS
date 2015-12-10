@@ -113,7 +113,7 @@ h1#generals:hover {
 }
 
 #center, #head, #left, #nav, #right, #titleleft, #titleright {
-	background-color: #24282B;
+	background-color: #303131;
 
 
 }
@@ -273,14 +273,18 @@ a, a:visited, a:link {
 }
 
 .threadContent {
-	background-color: #d8dce0;
+	background-color: #D0D4D8;
 	font-size: 14px;
 	min-height: 100px;
 	padding: 5px;
 }
 
+.threadTitle {
+	text-align: center;
+}
+
 .threadUser {
-	background-color: #9aacc6;
+	background-color: #6E7988;
 	max-height: 30px;
 	font-size: 14px;
 	color: black;

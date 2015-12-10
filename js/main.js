@@ -1,13 +1,13 @@
 var myApp = angular.module('myApp', ['ui.router', 'firebase']);
 var ref;
 
-myApp.config(function($stateProvider, $urlRouterProvider) {
+myApp.config(function($stateProvider) {
 
 
   // Prevent $urlRouter from automatically intercepting URL changes;
   // this allows you to configure custom behavior in between
   // location changes and route synchronization:
-  $urlRouterProvider.deferIntercept();
+ 
 
     $stateProvider
 	.state('home', {
