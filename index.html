@@ -64,7 +64,12 @@
 						<a ui-sref="blogs"><h1>Blog</h1></a>
 						<p>
 							<ul>
-								<li><strong>Example</strong>
+								<li><strong>Featured</strong>
+									<ul >
+										<li ng-repeat="thread4 in threads4"><a href="/#/thread/{{ thread4.id }}" class="sidebar">{{ thread4.title }}</a></li>
+									</ul>
+								</li>
+								<li><strong>Community</strong>
 									<ul >
 										<li ng-repeat="thread3 in threads3"><a href="/#/thread/{{ thread3.id }}" class="sidebar">{{ thread3.title }}</a></li>
 									</ul>
