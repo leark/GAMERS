@@ -65,19 +65,24 @@ myApp.config(function($stateProvider) {
 	// http://localhost:8080/#/thread/4367055812
 	// http://localhost:8080/#/thread/4367336827
 
-	$http.get('https://disqus.com/api/3.0/threads/listPosts.json', {
-		params: {
-			access_token: ACCESS_TOKEN,
-			api_key: API_KEY,
-			thread: THREAD_ID,
-			order: 'asc' }
-	}).success(function(response) {
-		var data = response.response;
-		for (var i =0; i < data.length; i++) {
-	    	data[i].createdAt = Date.parse(data[i].createdAt);
-	    }
-		$scope.posts = data;
-	});
+	$scope.getPosts = function() {
+		$http({
+			url: 'https://disqus.com/api/3.0/threads/listPosts.json', 
+			method: "GET",
+			params: {
+				access_token: ACCESS_TOKEN,
+				api_key: API_KEY,
+				thread: THREAD_ID,
+				order: 'asc' 
+			}
+		}).success(function(response) {
+			var data = response.response;
+			for (var i =0; i < data.length; i++) {
+		    	data[i].createdAt = Date.parse(data[i].createdAt);
+	    	}
+			$scope.posts = data;
+		})
+	}
 
 	$scope.createPost = function() {
 		var post = $('#replyText').val();
@@ -95,6 +100,7 @@ myApp.config(function($stateProvider) {
 				author_email: $scope.userEmail
 			}
 		}).success(function() {
+			$scope.getPosts;
 			document.location.reload(true);
 		})
 	}
@@ -122,7 +128,7 @@ myApp.config(function($stateProvider) {
 				})
 			}
 		}, {
-			remember: "default",
+			remember: "sessionOnly",
 			scope: "email"
 		});	
 	})
