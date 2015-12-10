@@ -45,8 +45,6 @@ myApp.config(function($stateProvider) {
 
 	$scope.name = "stuff";
 	$scope.posts = {};
-
-	console.log(THREAD_ID);
 	
 	//example urls:
 	// http://localhost:8080/#/thread/4367055812
@@ -60,7 +58,6 @@ myApp.config(function($stateProvider) {
 			order: 'asc' }
 	}).success(function(response) {
 		var data = response.response;
-		console.log(data);
 		for (var i =0; i < data.length; i++) {
 	    	data[i].createdAt = Date.parse(data[i].createdAt);
 	    }
@@ -79,8 +76,8 @@ myApp.config(function($stateProvider) {
 				api_key: DISQUS_KEY,
 				message: post,
 				thread: id,
-				author_name: "sherry",
-				author_email: "shgao1011@gmail.com"
+				author_name: $scope.userName,
+				author_email: $scope.userEmail
 			}
 		}).success(function() {
 			document.location.reload(true);
@@ -104,8 +101,15 @@ myApp.config(function($stateProvider) {
 			    var scope = angular.element($("body")).scope();
 	    		scope.$apply(function() {
 	    			scope.userName = authData.facebook.displayName;
+	    			if (authData.facebook.email == false)
+	    				scope.userEmail = "uwdisqus@gmail.com";
+	    			else
+	    				scope.userEmail = authData.facebook.email;
 				})
 			}
+		}, {
+			remember: "default",
+			scope: "email"
 		});	
 	})
 
@@ -128,7 +132,6 @@ $(function() {
 		order: "asc"
 	}, function(response) {
 		data = response.response;
-		console.log(data);
 		getForums(data);
 	})
 
