@@ -188,7 +188,7 @@ myApp.config(function($stateProvider) {
 			url: "https://disqus.com/api/3.0/posts/create.json",
 			method: "POST",
 			params: {
-				api_key: DISQUS_KEY,
+				api_key: API_KEY,
 				message: post,
 				thread: id,
 				author_name: $scope.userName,
