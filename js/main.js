@@ -2,11 +2,6 @@ var myApp = angular.module('myApp', ['ui.router', 'firebase']);
 var ref;
 
 myApp.config(function($stateProvider) {
-
-  // Prevent $urlRouter from automatically intercepting URL changes;
-  // this allows you to configure custom behavior in between
-  // location changes and route synchronization:
-
     $stateProvider
 	.state('home', {
 		url:'home',
@@ -147,10 +142,6 @@ myApp.config(function($stateProvider) {
 		})
 	})
 
-	//example urls:
-	// http://localhost:8080/#/thread/4367055812
-	// http://localhost:8080/#/thread/4367336827
-
 	$scope.getPosts = function() {
 		$http({
 			url: 'https://disqus.com/api/3.0/threads/listPosts.json', 
@@ -226,7 +217,6 @@ myApp.config(function($stateProvider) {
 	});
 	
 	$('#login').click(function() {
-		//ref = new Firebase("https://gameruw.firebaseio.com");
 		ref.authWithOAuthPopup("facebook", function(error, authData) {
 			if (error) {
 		    	console.log("Login Failed!", error);
@@ -272,45 +262,6 @@ myApp.config(function($stateProvider) {
 $(function() {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
-
-
-	// $.get("https://disqus.com/api/3.0/users/listForums.json", {
-	// 	access_token: ACCESS_TOKEN,
-	// 	api_key: API_KEY,
-	// 	user: "185257554",
-	// 	order: "asc"
-	// }, function(response) {
-	// 	data = response.response;
-	// 	getForums(data);
-	// })
-
-	// var getForums = function(data) {
-	// 	var number = 1;
-	// 	for (var i = 0; i < data.length; i++) {
-	// 		var name = data[i].name;	
-	// 		$.get("https://disqus.com/api/3.0/forums/listThreads.json", {
-	// 			access_token: ACCESS_TOKEN,
-	// 			api_key: API_KEY,
-	// 			forum: name
-	// 		}, function(response) {
-	// 			dat = response.response;
-	// 			console.log("forum response");
-	// 			console.log(dat);
-	// 			getThreads(dat, "threads" + number);
-	// 			number++;
-	// 		})
-	// 	}
-	// }
-
-	// var getThreads = function(data, num) {
-	// 	var scope = angular.element($("body")).scope();
- //    	scope.$apply(function() {
-	// 		for (var i =0; i < data.length; i++) {
-	// 	    	data[i].createdAt = Date.parse(data[i].createdAt);
-	// 	    }
- //    		scope[num] = data;
-	// 	})
-	// }
 
 	$('#titleleft').click(function() {
 		if($('#leftbar').css('display') == 'none') {
