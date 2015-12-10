@@ -22,11 +22,13 @@ h1 {
 	font-size: 22px;
 	margin: 0px;
 	padding: 5px;
-	text-align: center;
 }
 
-h1, h4 {
+h1, h4, .nav {
 	font-family: 'press start 2p', cursive;
+}
+
+h1, h4, #centerTitle, #footer, #irc, #nav {
 	text-align: center;
 }
 
@@ -46,7 +48,7 @@ h5 {
 	margin-left: 5%;
 }
 
-.newPostLabel {
+button, #leftInline, .newPostLabel, .threadList {
 	text-align: left;
 }
 
@@ -101,7 +103,6 @@ td {
 
 button {
 	color:black;
-	text-align: left;
 }
 
 .post {
@@ -162,10 +163,6 @@ a, a:visited {
 	color:white;
 }
 
-.nav {
-	font-family: 'press start 2P', cursive;
-}
-
 .nav, .nav:visited {
 	color: white;
 	display: inline-block;
@@ -197,10 +194,6 @@ a, a:visited {
 	text-decoration: underline;
 }
 
-.threadList {
-	text-align:left;
-}
-
 #center {
 	display: inline-block;
 	margin-top: 0px;
@@ -218,9 +211,8 @@ a, a:visited {
 	margin-right: 6px;
 }
 
-#footer, #irc{
+#footer, #irc {
 	clear: both;
-	text-align: center;
 }
 
 #head {
@@ -243,13 +235,8 @@ a, a:visited {
 	z-index: 0;
 }
 
-#login, #logout{
-	cursor: pointer;
-}
-
 #nav {
 	margin-bottom: 5px;
-	text-align: center;
 }
 
 #right {
@@ -268,10 +255,6 @@ a, a:visited {
 	display: none;
 }
 
-#leftInline {
-	text-align: left;
-}
-
 #rightInline {
 	text-align: right;
 }
@@ -280,7 +263,6 @@ a, a:visited {
 	color: white;
 	margin: auto;
 	width:50%;
-	text-align: center;
 }
 
 /* CSS that changes when the screen is smaller than 1230px */
