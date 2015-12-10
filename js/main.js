@@ -9,12 +9,6 @@ myApp.config(function($stateProvider) {
 		controller: 'HomeController',
 	})
 
-	.state('newPost', {
-		url: '/newPost',
-		templateUrl: 'templates/forum/newPost.html',
-		controller: 'NewPostController',	
-	})
-
 	.state('threads', {
 		url: '/thread/{threadId}',
 		templateUrl: 'templates/forum/threads.html',
@@ -41,8 +35,6 @@ myApp.config(function($stateProvider) {
 }) 
 
 .controller('HomeController', function($scope){})
-
-.controller('NewPostController', function($scope){})
 
 .controller('IrcController', function($scope){})
 
