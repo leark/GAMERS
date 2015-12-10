@@ -302,12 +302,16 @@ a, a:link {
 	float: right;
 }
 
+
 .threadTable {
 	color:black;
 }
 
 .gen {
 	color:black;
+
+summary {
+	font-size: 20px;
 }
 
 .homes {

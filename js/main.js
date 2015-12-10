@@ -9,7 +9,6 @@ myApp.config(function($stateProvider) {
 		controller: 'HomeController',
 	})
 
-
 	.state('featuredTopic', {
 		url:'/featuredTopic',
 		templateUrl: 'templates/forum/featuredTopic.html',
@@ -256,6 +255,17 @@ myApp.config(function($stateProvider) {
 		var blog = response.$getRecord("gamergroupblog");
 		$scope.forums = [general, blog];
 	})
+
+	// var ref = new Firebase("https://gameruw.firebaseio.com/");
+	// var forum = $firebaseArray(ref.child(forumName));
+	// forum.$loaded().then(function (response) { 
+	// 	$scope.first = forum.$getRecord(THREAD_ID);
+	// 	replies = $scope.first.replies;
+	// 	replies++;
+
+	// var threadRef = new Firebase('https://gameruw.firebaseio.com/' + forumName + '/' + id);
+
+	// threadRef.update({ featured });
 })
 
 // loads after page is done loading
