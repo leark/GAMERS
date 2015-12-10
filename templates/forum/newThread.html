@@ -1,5 +1,11 @@
 <form class="form-horizontal" ng-submit="submit()" ng-show='!showLogin'>
   <div class="form-group newPostArea">
+    <label for="forumSelect">Select Forum: </label>
+    <select>
+      <option value="gamergroupgeneral">General</option>
+      <option value="gamergroupblog">Blog</option>
+      <option value="gamergroupfeaturedtopic">Featured Topic</option>
+    </select>
     <label for="threadTitle" class="col-sm-2 newPostLabel">Topic</label>
     <input type="text" class="form-control" id="threadTitle" ng-model="threadTitle" placeholder="Topic">
   </div>

@@ -45,62 +45,34 @@ myApp.config(function($stateProvider) {
 .controller('NewThreadController', function($scope, $http, $firebaseArray) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
-	var SECRET_KEY = "pn6sboBzfjR73EczCcJuRizm4QGbrB7WJFdykUF1XeNksXqH1Dmp1esoz4LY1rmn";
 	$scope.submit = function() {
 		console.log("Attempting to create new thread...");
+
 		$.post("https://disqus.com/api/3.0/threads/create.json", 
 		{	access_token: ACCESS_TOKEN,
 			api_key: API_KEY,
-			forum: "uwexample1",
+			forum: $scope.forumSelect,
 			title: $scope.threadTitle,
 			message: $scope.threadMessage 
 		}, function(response) {
-		data = response.response;
-		console.log("ceating " + $scope.threadTitle);
-		console.log(data);
-		var threads = ref.child('threads');
-		$scope.threads = $firebaseArray(threads);
-		$scope.threads.$add({
-    		title: $scope.threadTitle,
-    		message: $scope.threadMessage,
-    		disqusId: data.id,
-    		author: $scope.userName,
-    		featured: false,
-    		forum: "uwexample1",
-    		time: Firebase.ServerValue.TIMESTAMP
-	    }).then( function() {
-    		$scope.threadTitle = "";
-    		$scope.threadMessage = "";
-	    })
-	})	
-
-		// $http.post("https://disqus.com/api/3.0/threads/create.json", {
-		// 	params: {
-		// 		api_key: SECRET_KEY,
-		// 		access_token: ACCESS_TOKEN,
-		// 		forum: "uwexample1",
-		// 		title: $scope.threadTitle,
-		// 		message: $scope.threadMessage
-		// 	}	
-		// }).success(function(response) {
-		// 	console.log("Success!");
-		// 	var data = response.response;
-		// 	// get name from facebook
-		// 	// send to firebase
-	 //    	var ref = new Firebase("https://gameruw.firebaseio.com/");
-	 //    	$scope.threads.$add({
-	 //    		title: $scope.threadTitle,
-	 //    		message: $scope.threadMessage,
-	 //    		id: data.id,
-	 //    		author: $scope.userName,
-	 //    		featured: false,
-	 //    		forum: "uwexample1",
-	 //    		time: Firebase.ServerValue.TIMESTAMP
-	 //    	}).then( function() {
-	 //    		$scope.threadTitle = "";
-	 //    		$scope.threadMessage = "";
-	 //    	})
-	 //    })
+			data = response.response;
+			console.log("ceating " + $scope.threadTitle);
+			console.log(data);
+			var threads = ref.child($scope.forumSelect);
+			$scope.threads = $firebaseArray(threads);
+			$scope.threads.$add({
+	    		title: $scope.threadTitle,
+	    		message: $scope.threadMessage,
+	    		disqusId: data.id,
+	    		author: $scope.userName,
+	    		featured: false,
+	    		forum: $scope.forumSelect,
+	    		time: Firebase.ServerValue.TIMESTAMP
+		    }).then( function() {
+	    		$scope.threadTitle = "";
+	    		$scope.threadMessage = "";
+		    })
+		})	
 	}
 })
 
