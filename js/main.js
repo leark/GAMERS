@@ -109,7 +109,11 @@ myApp.config(function($stateProvider) {
 	$scope.blogs = $firebaseArray(threads);
 })
 
-.controller('featuredContentController', function($scope){})
+.controller('featuredTopicController', function($scope, $firebaseArray){
+	ref = new Firebase("https://gameruw.firebaseio.com/");
+	var threads = ref.child('gamergroupfeaturedtopic');
+	$scope.featured = $firebaseArray(threads);
+})
 
 .controller('ThreadController', function($scope, $http, $stateParams, $firebaseArray) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
