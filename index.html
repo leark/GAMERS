@@ -49,12 +49,12 @@
 						<p>
 							<ul><strong>Featured</strong>
 								<div ng-repeat="general in generals | limitTo:6 | orderBy:'-recent'" ng-if="general.featured">
-									<a ng-href="http://localhost:8080/#/thread/{{general.$id}}">{{general.title}}</a>
+									<a ng-href="http://students.washington.edu/ishiiy/GAMERS/#/thread/{{general.$id}}">{{general.title}}</a>
 								</div>
 							</ul>
 							<ul><strong>Community</strong>
 								<div ng-repeat="general in generals | limitTo:6 | orderBy:'-recent'" ng-if="!general.featured">
-									<a ng-href="http://localhost:8080/#/thread/{{general.$id}}">{{general.title}}</a>
+									<a ng-href="http://students.washington.edu/ishiiy/GAMERS/#/thread/{{general.$id}}">{{general.title}}</a>
 								</div>
 							</ul>
 						</p>
@@ -63,12 +63,12 @@
 						<p>
 							<ul><strong>Featured</strong>
 								<li ng-repeat="blog in blogs | limitTo:6 | orderBy:'-recent'" ng-if="blog.featured">
-									<a ng-href="http://localhost:8080/#/thread/{{blog.$id}}">{{blog.title}}</a>
+									<a ng-href="http://students.washington.edu/ishiiy/GAMERS/#/thread/{{blog.$id}}">{{blog.title}}</a>
 								</li>
 							</ul>
 							<ul><strong>Community</strong>
 								<li ng-repeat="blog in blogs | limitTo:6 | orderBy:'-recent'" ng-if="!blog.featured">
-									<a ng-href="http://localhost:8080/#/thread/{{blog.$id}}">{{blog.title}}</a>
+									<a ng-href="http://students.washington.edu/ishiiy/GAMERS/#/thread/{{blog.$id}}">{{blog.title}}</a>
 								</li>
 							</ul>
 						</p>
@@ -77,7 +77,7 @@
 						<p>
 							<ul>
 								<li ng-repeat="feature in featured | limitTo:12 | orderBy:'-recent' ">
-									<a ng-href="http://localhost:8080/#/thread/{{feature.$id}}">{{feature.title}}</a>
+									<a ng-href="http://students.washington.edu/ishiiy/GAMERS/#/thread/{{feature.$id}}">{{feature.title}}</a>
 								</li>
 							</ul>
 						</p>
