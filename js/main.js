@@ -173,6 +173,7 @@ myApp.config(function($stateProvider) {
 		$.post("https://disqus.com/api/3.0/posts/create.json", 
 		{	api_key: API_KEY,
 			api_secret: SECRET_KEY,
+			access_token: ACCESS_TOKEN,
 			thread: THREAD_ID,
 			message: post,
 			author_name: authorName,
