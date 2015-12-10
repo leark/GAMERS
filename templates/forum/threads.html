@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container" id="threadMain">
 	<div class="post">
 		<div class="threadTitle">
@@ -11,9 +10,8 @@
 			<p>placeholder</p>
 		</div>
 	</div>
-=======
+
 <div class="container" ng-init="getPosts()" id="threadMain">
->>>>>>> 14c957da76f86b862978f3666ac40a804f5df034
 	<div class="post" ng-repeat="post in posts">
 		<div class="threadUser">
 			<span>{{ post.author.name }}</span> <span class="timeStamp">{{ post.createdAt | date : 'short' }}</span>
@@ -24,11 +22,7 @@
 	</div>
 </div>
 <div class="form-group">
-<<<<<<< HEAD
-    <label for="comment" class="col-sm-3 control-label">Comment {{ userName }}</label>
-=======
     <label for="comment" class="control-label"><span ng-show="!showLogin">Comment as {{ userName }}</span><span ng-show="showLogin">Sign in to comment</span></label>
->>>>>>> 14c957da76f86b862978f3666ac40a804f5df034
 	<div id="replyComment" class="col-sm-10">
 		<textarea class="form-control" id="replyText" placeholder="Reply with a Comment" rows="3"></textarea>
 	</div>
