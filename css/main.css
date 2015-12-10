@@ -68,6 +68,7 @@ strong {
 
 table {
 	width: 98%;
+
 }
 
 table, #footer, #head, #main, #nav, #irc, #replyButton, #replyComment, .post {
@@ -171,8 +172,8 @@ h1#generals:hover {
 }
 
 
-a, a:visited, a:link {
-	color:#A3B1BD;
+a, a:link {
+	
 	font-size:12px;
 }
 
@@ -201,7 +202,7 @@ a, a:visited, a:link {
 
 #gamersDesc {
 	padding: 7px;
-	color:#A3B1BD;
+	color:white;
 	font-size: 12px;
 }
 #replyComment, #stuff, .post {
@@ -247,12 +248,14 @@ a, a:visited, a:link {
 }
 
 .featuredThreads {
-	background: gray;
+	background: #5D6871;
+	color:black;
 }
 
 .featuredThreads:nth-child(odd) {
-	background: lightgray;
+	background: #818D96;
 }
+
 
 .nav, .nav:active, .nav:hover, .nav:visited, .sidebar {
 	text-decoration: none;
@@ -299,8 +302,17 @@ a, a:visited, a:link {
 	float: right;
 }
 
+.threadTable {
+	color:black;
+}
 
+.gen {
+	color:black;
+}
 
+.homes {
+	color:white;
+}
 /* CSS that changes when the screen is smaller than 1230px */
 @media screen and (max-width: 1230px) {
 	#center {

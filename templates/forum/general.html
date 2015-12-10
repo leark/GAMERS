@@ -16,7 +16,7 @@
 				<td>Last Updated</td>
 			</tr>
 			<tr ng-repeat="general in generals | filter:featured" class="featuredThreads">
-				<td><a href="/#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
+				<td class='threadTable'><a href="/#/thread/{{ general.$id }}" class="emailStyle">{{ general.title }}</a></td>
 				<td>{{ general.author }}</td>
 				<td>{{ general.replies }}</td>
 				<td>{{ general.recent | date : 'short'  }}</td>
@@ -24,7 +24,7 @@
 		</table>
 		<table>
 			<tr id="tableHead">
-				<td>General Threads: Community</td>
+				<td class='threadTable'>General Threads: Community</td>
 				<td>Original Creator</td>
 				<td>Replies</td>
 				<td>Last Updated</td>
