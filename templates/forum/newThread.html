@@ -1,19 +1,13 @@
 <form class="form-horizontal" ng-submit="submit()" ng-show='!showLogin'>
-  <div class="form-group">
-    <label for="threadTitle" class="col-sm-2 control-label">Topic</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="threadTitle" ng-model="threadTitle" placeholder="Topic">
-    </div>
+  <div class="form-group newPostArea">
+    <label for="threadTitle" class="col-sm-2 newPostLabel">Topic</label>
+    <input type="text" class="form-control" id="threadTitle" ng-model="threadTitle" placeholder="Topic">
+  </div>
+  <div class="form-group newPostArea">
+    <label for="threadMessage" class="col-sm-2 newPostLabel">Messages</label>
+    <textarea class="form-control" id="threadMessage" ng-model="threadMessage" placeholder="Message" rows="3"></textarea>
   </div>
   <div class="form-group">
-    <label for="threadMessage" class="col-sm-2 control-label">Messages</label>
-    <div class="col-sm-10">
-    	<textarea class="form-control" id="threadMessage" ng-model="threadMessage" placeholder="Message" rows="3"></textarea>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" id="submit" class="btn btn-default">Post</button>
-    </div>
+    <button type="submit" id="submit" class="btn btn-default">Post</button>
   </div>
 </form>

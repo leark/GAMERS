@@ -4,7 +4,6 @@ body{
 	font-family: Arial;
 	font-size: 11px;
 	margin: 0px;
-	color: white;
 	background: url('../img/letmelivedeepwhileilive.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -12,57 +11,67 @@ body{
 	background-size: cover;
 }
 
+a, a:visited, body, h1, #centerTitle, .nav, .nav:active, .nav:hover, .nav:visited, .sidebar {
+	color:white;
+}
+
+button {
+	color: black;
+}
+
+button, #leftInline, .newPostLabel, .threadList {
+	text-align: left;
+}
+
 form {
 	margin: 15px;
 }
 
 h1 {
-	background-color: black;
-	color: white;
 	font-size: 22px;
 	margin: 0px;
 	padding: 5px;
-	text-align: center;
 }
 
-h1, h4 {
+h1, h5, #tableHead, .nav:active, .nav:hover {
+	background-color: black;
+}
+
+h1, h4, .nav {
 	font-family: 'press start 2p', cursive;
+}
+
+h1, h4, #centerTitle, #footer, #irc, #nav {
 	text-align: center;
 }
 
 h5 {
-	background-color: black;
 	padding: 10px;
 	margin: 10px;
-	margin-bottom: 0;
-}
-
-label {
-	margin-left: 10px;
+	margin-bottom: 0px;
 }
 
 p {
 	padding-left: 5px;
 	padding-right: 5px;
+	color:black;
 }
 
 strong {
 	font-size: 12px;
 }
 
-.featuredThreads {
-	background: gray;
-}
-
 table {
 	width: 98%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 10px;
 }
 
-.emailStyle {
-	text-decoration: underline;
+table, #footer, #head, #main, #nav, #irc, #replyButton, #replyComment, .post {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, #listShowArea, #replyButton, #replyComment, #threadMain, .post {
+	margin-bottom: 10px;
 }
 
 td {
@@ -71,47 +80,125 @@ td {
 	padding-bottom: 10px;
 }
 
-#tableHead {
-	background-color: black;
+ul {
+	list-style-type: none;
+	padding-left: 15px;
 }
 
-.featuredThreads:nth-child(odd) {
-	background: lightgray;
+#center {
+	margin-top: 0px;
+	position: relative;
+	width: 764px;
 }
 
-#listShowArea {
-	margin-bottom: 10px;
+#center, #head, #left, #nav, #right {
+	margin-bottom: 5px;
 }
 
-#replyComment {
-	width: 100%;
-	margin-bottom: 10px;
-	margin-left: auto;
-	margin-right: auto;
+
+h1#generals:hover {
+	color:#A3B1BD;
+
 }
 
 button {
 	color:black;
-	text-align: left;
 }
 
-.post {
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 10px;
+#center, #head, #left, #nav, #right, #titleleft, #titleright {
+	background-color: #292929;
+
+}
+
+#center, #left, #right {
+	float: left;
+}
+
+#center, #left {
+	margin-right: 6px;
+}
+
+#center, #right, .nav, .nav:visited {
+	display: inline-block;
+}
+
+#centerTitle {
+	margin: auto;
+	width: 50%;
+}
+
+
+.threadUser {
+	background-color: #747F90;
+	max-height: 30px;
+	font-size: 14px;
+	color: black;
+	line-height: 29px;
+	font-weight: 700;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#footer, #head, #main, #nav, #irc {
+	width: 1214px;
+
+}
+
+#footer, #irc {
+	clear: both;
+}
+
+#gamersDesc {
+	padding: 7px;
+}
+
+
+a, a:visited, a:link {
+	color:#A3B1BD;
+	font-size:12px;
+}
+
+#head {
+	background-image: url('http://gamer.ischool.uw.edu/wp-content/cache/image/static/153e54cba6f6c145fa30e635b04992f8.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 135px;
+
+}
+
+#left, #right {
+	position: relative;
+	width: 219px;
+	z-index: 0;
 }
 
 #replyButton {
-	margin: 0;
-	margin-bottom: 10px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0px;
 	width: 500px;
 }
 
-.timeStamp {
-	float: right;
+
+#gamersDesc {
+	padding: 7px;
+	color:#A3B1BD;
+	font-size: 12px;
+}
+#replyComment, #stuff, .post {
+	width: 100%;
+
+}
+
+#rightInline {
+	text-align: right;
+}
+
+#stuff {
+	position: absolute;
+	top: 0px;
+}
+
+#submit {
+	margin-left: 5%;
 }
 
 #threadCenter {
@@ -121,9 +208,49 @@ button {
 }
 
 #threadMain {
-	margin-bottom: 10px;
 	margin-top: 10px;
 	width: 99%;
+}
+
+#titleleft, #titleright {
+	display: none;
+}
+
+.emailStyle, .sidebar:hover {
+	text-decoration: underline;
+}
+
+.featuredThreads {
+	background: gray;
+}
+
+.featuredThreads:nth-child(odd) {
+	background: lightgray;
+}
+
+.nav, .nav:active, .nav:hover, .nav:visited, .sidebar {
+	text-decoration: none;
+}
+
+.nav, .nav:visited {
+	font-size: 20px;
+	padding-bottom: 2px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 2px;
+	text-transform: uppercase;
+}
+
+.newPostArea {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.threadContent {
+	background-color: #d8dce0;
+	font-size: 14px;
+	min-height: 100px;
+	padding: 5px;
 }
 
 .threadUser {
@@ -137,141 +264,8 @@ button {
 	padding-right: 5px;
 }
 
-.threadContent {
-	background-color: #d8dce0;
-	font-size: 14px;
-	min-height: 100px;
-	padding: 5px;
-}
-
-ul {
-	list-style-type: none;
-	padding-left: 15px;
-}
-
-a, a:visited {
-	color:white;
-}
-
-.nav {
-	font-family: 'press start 2P', cursive;
-}
-
-.nav, .nav:visited {
-	color: white;
-	display: inline-block;
-	font-size: 20px;
-	padding-bottom: 2px;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 2px;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-.nav:active, .nav:hover {
-	background-color: black;
-	color: white;
-	text-decoration: none;
-}
-
-#gamersDesc {
-	padding: 7px;
-}
-
-.sidebar {
-	color: white;
-	text-decoration: none;
-}
-
-.sidebar:hover {
-	text-decoration: underline;
-}
-
-.threadList {
-	text-align:left;
-}
-
-#center {
-	display: inline-block;
-	margin-top: 0px;
-	position: relative;
-	width: 764px;
-}
-
-#center, #head, #left, #nav, #right, #titleleft, #titleright {
-	background-color: #292929;
-}
-
-#center, #left {
-	float: left;
-	margin-bottom: 5px;
-	margin-right: 6px;
-}
-
-#footer, #irc{
-	clear: both;
-	text-align: center;
-}
-
-#head {
-	background-image: url('http://gamer.ischool.uw.edu/wp-content/cache/image/static/153e54cba6f6c145fa30e635b04992f8.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 135px;
-	margin-bottom: 5px;
-}
-
-#footer, #head, #main, #nav, #irc{
-	margin-left: auto;
-	margin-right: auto;
-	width: 1214px;
-}
-
-#left, #right {
-	position: relative;
-	width: 219px;
-	z-index: 0;
-}
-
-#login, #logout{
-	cursor: pointer;
-}
-
-#nav {
-	margin-bottom: 5px;
-	text-align: center;
-}
-
-#right {
-	display: inline-block;
-	float: left;
-	margin-bottom: 5px;
-}
-
-#stuff {
-	position: absolute;
-	width: 100%;
-	top: 0px;
-}
-
-#titleleft, #titleright {
-	display: none;
-}
-
-#leftInline {
-	text-align: left;
-}
-
-#rightInline {
-	text-align: right;
-}
-
-#centerTitle {
-	color: white;
-	margin: auto;
-	width:50%;
-	text-align: center;
+.timeStamp {
+	float: right;
 }
 
 /* CSS that changes when the screen is smaller than 1230px */
@@ -291,19 +285,11 @@ a, a:visited {
 	#left, #right {
 		width: 170px;
 	}
-
-	h5 {
-		background-color: black;
-		padding: 10px;
-		margin: 10px;
-		margin-bottom: 0;
-	}
 }
 
 /* CSS that changes when the screen is smaller than 1024px */
 @media screen and (max-width: 1024px) {
 	h1{
-		font-size: 24px;
 		padding: 5px;
 	}
 
