@@ -107,6 +107,7 @@ myApp.config(function($stateProvider) {
 		    $scope.showLogin = false;
 		    var scope = angular.element($("body")).scope();
 	    	$scope.userName = authData.facebook.displayName;
+	    	$scope.userEmail = authData.facebook.email;
 		  } else {
 		    $scope.showLogin = true;
 		  }
