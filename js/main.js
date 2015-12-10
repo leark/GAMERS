@@ -67,7 +67,7 @@ myApp.config(function($stateProvider) {
 	    		author: $scope.userName,
 	    		featured: false,
 	    		forum: $scope.forumSelect,
-	    		time: Firebase.ServerValue.TIMESTAMP
+	    		recent: Firebase.ServerValue.TIMESTAMP
 		    }).then( function() {
 	    		$scope.threadTitle = "";
 	    		$scope.threadMessage = "";
@@ -120,7 +120,6 @@ myApp.config(function($stateProvider) {
 		var url = window.location.href;
 		var id = url.substr(url.lastIndexOf("/") + 1);
 
-
 		$http({
 			url: "https://disqus.com/api/3.0/posts/create.json",
 			method: "POST",
@@ -155,6 +154,7 @@ myApp.config(function($stateProvider) {
 		    $scope.showLogin = true;
 		  }
 	});
+	
 	$('#login').click(function() {
 		//ref = new Firebase("https://gameruw.firebaseio.com");
 		ref.authWithOAuthPopup("facebook", function(error, authData) {
