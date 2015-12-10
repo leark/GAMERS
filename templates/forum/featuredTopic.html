@@ -15,10 +15,10 @@
 				<td>Replies</td>
 				<td>Date Created</td>
 			</tr>
-			<tr ng-repeat="feature in featured | filter:featured" class="featuredThreads">
+			<tr ng-repeat="feature in featured " class="featuredThreads">
 				<td><a href="/#/thread/{{ feature.$id }}" class="emailStyle">{{ feature.title }}</a></td>
 				<td>{{ feature.author }}</td>
-				<td></td>
+				<td>{{ feature.replies }}</td>
 				<td>{{ feature.recent | date : 'short' }}</td>
 			</tr>
 		</table>
