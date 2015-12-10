@@ -16,7 +16,7 @@
 			<td>Last Updated</td>
 		</tr>
 		<tr ng-repeat="blog in blogs | orderBy:'-recent'" ng-if="blog.featured" class="featuredThreads">
-			<td><a href="/#/thread/{{ blog.$id }}" class="emailStyle">{{ blog.title }}</a></td>
+			<td><a href="ishiiy/GAMERS/#/thread/{{ blog.$id }}" class="emailStyle">{{ blog.title }}</a></td>
 			<td>{{ blog.author }}</td>
 			<td>{{ blog.replies }}</td>
 			<td>{{ blog.recent | date : 'short' }}</td>
@@ -30,7 +30,7 @@
 			<td>Date Created</td>
 		</tr>
 		<tr ng-repeat="blog in blogs | filter:!featured | orderBy:'-recent'" class="featuredThreads">
-			<td><a href="/#/thread/{{ blog.$id }}" class="emailStyle">{{ blog.title }}</a></td>
+			<td><a href="ishiiy/GAMERS/#/thread/{{ blog.$id }}" class="emailStyle">{{ blog.title }}</a></td>
 			<td>{{ blog.author }}</td>
 			<td>{{ blog.replies }}</td>
 			<td>{{ blog.recent | date : 'short' }}</td>
