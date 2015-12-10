@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ui.router']);
+var myApp = angular.module('myApp', ['ui.router', 'firebase']);
 var ref;
 
 myApp.config(function($stateProvider) {
@@ -9,10 +9,10 @@ myApp.config(function($stateProvider) {
 		controller: 'HomeController',
 	})
 
-	.state('newPost', {
-		url: '/newPost',
-		templateUrl: 'templates/forum/newPost.html',
-		controller: 'NewPostController',	
+	.state('newThread', {
+		url: '/newThread',
+		templateUrl: 'templates/forum/newThread.html',
+		controller: 'NewThreadController',	
 	})
 
 	.state('threads', {
@@ -30,7 +30,40 @@ myApp.config(function($stateProvider) {
 
 .controller('HomeController', function($scope){})
 
-.controller('NewPostController', function($scope){})
+.controller('NewThreadController', function($scope, $http, $firebaseObject) {
+	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
+	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
+	$scope.submit = function() {
+		console.log("Attempting to create new thread...");
+		$http.post("https://disqus.com/api/3.0/threads/create.json", {
+			params: {
+				api_key: API_KEY,
+				access_token: ACCESS_TOKEN,
+				forum: "uwexample1",
+				title: $scope.threadTitle,
+				message: $scope.threadMessage
+			}	
+		}).success(function(response) {
+			console.log("Success!");
+			var data = response.response;
+			// get name from facebook
+			// send to firebase
+	    	var ref = new Firebase("https://gameruw.firebaseio.com/");
+	    	$scope.threads.$add({
+	    		title: $scope.threadTitle,
+	    		message: $scope.threadMessage,
+	    		id: data.id,
+	    		author: $scope.userName,
+	    		featured: false,
+	    		forum: "uwexample1",
+	    		time: Firebase.ServerValue.TIMESTAMP
+	    	}).then( function() {
+	    		$scope.threadTitle = "";
+	    		$scope.threadMessage = "";
+	    	})
+	    })
+	}
+})
 
 .controller('IrcController', function($scope){
 })
