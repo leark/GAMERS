@@ -24,32 +24,32 @@
 // -->
 
 <div id="listShowArea">
-		<table>
-			<tr id="tableHead">
-				<td>Blogs: Featured</td>
-				<td>Original Creator</td>
-				<td>Replies</td>
-				<td>Date Created</td>
-			</tr>
-			<tr ng-repeat="thread4 in threads4" class="featuredThreads">
-				<td><a href="/#/thread/{{ thread4.id }}" class="emailStyle">{{ thread4.title }}</a></td>
-				<td>{{ thread4.author }}</td>
-				<td>{{ thread4.posts }}</td>
-				<td>{{ thread4.createdAt | date : 'short' }}</td>
-			</tr>
-		</table>
-		<table>
-			<tr id="tableHead">
-				<td>General Threads: Community</td>
-				<td>Original Creator</td>
-				<td>Replies</td>
-				<td>Date Created</td>
-			</tr>
-			<tr ng-repeat="thread3 in threads3" class="featuredThreads">
-				<td><a href="/#/thread/{{ thread3.id }}" class="emailStyle">{{ thread3.title }}</a></td>
-				<td>{{ thread3.author }}</td>
-				<td>{{ thread3.posts }}</td>
-				<td>{{ thread3.createdAt | date : 'short' }}</td>
-			</tr>
-		</table>
-	</div>
+	<table>
+		<tr id="tableHead">
+			<td>Blogs: Featured</td>
+			<td>Original Creator</td>
+			<td>Replies</td>
+			<td>Date Created</td>
+		</tr>
+		<tr ng-repeat="thread4 in threads4" class="featuredThreads">
+			<td><a href="/#/thread/{{ thread4.id }}" class="emailStyle">{{ thread4.title }}</a></td>
+			<td>{{ thread4.author }}</td>
+			<td>{{ thread4.posts }}</td>
+			<td>{{ thread4.createdAt | date : 'short' }}</td>
+		</tr>
+	</table>
+	<table>
+		<tr id="tableHead">
+			<td>General Threads: Community</td>
+			<td>Original Creator</td>
+			<td>Replies</td>
+			<td>Date Created</td>
+		</tr>
+		<tr ng-repeat="thread3 in threads3" class="featuredThreads">
+			<td><a href="/#/thread/{{ thread3.id }}" class="emailStyle">{{ thread3.title }}</a></td>
+			<td>{{ thread3.author }}</td>
+			<td>{{ thread3.posts }}</td>
+			<td>{{ thread3.createdAt | date : 'short' }}</td>
+		</tr>
+	</table>
+</div>

@@ -47,32 +47,28 @@
 					<div id="leftbar"> 
 						<a ui-sref="general"><h1 id="generals">General</h1></a>						
 						<p>
-							<ul>
-								<li><strong>Featured</strong>
-									<ul ng-repeat="thread1 in threads1">
-										<li><a ng-href="/#/thread/{{ thread1.id }}" class="sidebar"> {{ thread1.title }}</a></li>
-									</ul>
-								</li>
-								<li><strong>Community</strong>
-									<ul >
-										<li ng-repeat="thread2 in threads2"><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
-									</ul>
-								</li>
+							<ul><strong>Featured</strong>
+								<div ng-repeat="general in generals | orderBy:'-recent'" ng-if="!featured">
+									<a ng-href="http://localhost:8080/#/thread/{{general.disqusId}}">{{general.title}}</a>
+								</div>
+							</ul>
+							<ul><strong>Community</strong>
+								<div ng-repeat="general in generals | orderBy:'-recent'" ng-if="featured">
+									<a ng-href="http://localhost:8080/#/thread/{{general.disqusId}}">{{general.title}}</a>
+								</div>
 							</ul>
 						</p>
 
 						<a ui-sref="blogs"><h1>Blog</h1></a>
 						<p>
-							<ul>
-								<li><strong>Featured</strong>
-									<ul >
-										<li ng-repeat="thread4 in threads4"><a href="/#/thread/{{ thread4.id }}" class="sidebar">{{ thread4.title }}</a></li>
-									</ul>
+							<ul><strong>Featured</strong>
+								<li ng-repeat="blog in blogs | orderBy:'-recent'" ng-if="!featured">
+									<a ng-href="http://localhost:8080/#/thread/{{blog.disqusId}}">{{blog.title}}</a>
 								</li>
-								<li><strong>Community</strong>
-									<ul >
-										<li ng-repeat="thread3 in threads3"><a href="/#/thread/{{ thread3.id }}" class="sidebar">{{ thread3.title }}</a></li>
-									</ul>
+							</ul>
+							<ul><strong>Community</strong>
+								<li ng-repeat="blog in blogs | orderBy:'-recent'" ng-if="featured">
+									<a ng-href="http://localhost:8080/#/thread/{{blog.disqusId}}">{{blog.title}}</a>
 								</li>
 							</ul>
 						</p>
@@ -80,10 +76,8 @@
 						<a ui-sref="home"><h1>Featured Topic</h1></a>
 						<p>
 							<ul>
-								<li>
-									<ul>
-										<li ng-repeat="thread2 in threads2"><a href="/#/thread/{{ thread2.id }}" class="sidebar">{{ thread2.title }}</a></li>
-									</ul>
+								<li ng-repeat="feature in featured | limitTo:7 && orderBy:'-recent'">
+									<a ng-href="http://localhost:8080/#/thread/{{feature.disqusId}}">{{feature.title}}</a>
 								</li>
 							</ul>
 						</p>

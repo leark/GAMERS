@@ -48,6 +48,7 @@ myApp.config(function($stateProvider) {
 	$scope.submit = function() {
 		console.log("Attempting to create new thread...");
 		console.log($scope.forumSelect);
+		ref = new Firebase("https://gameruw.firebaseio.com/");
 
 		$.post("https://disqus.com/api/3.0/threads/create.json", 
 		{	access_token: ACCESS_TOKEN,
@@ -140,9 +141,21 @@ myApp.config(function($stateProvider) {
 	}
 })
 
-.controller('myController', function($scope) {
+.controller('myController', function($scope, $firebaseArray) {
 	$scope.forums = {};
 	$scope.showLogin = true;
+
+	var ref = new Firebase("https://gameruw.firebaseio.com/");
+
+	var blogs = ref.child('gamergroupblog');
+	var featured = ref.child('gamergroupfeaturedtopic');
+	var generals = ref.child('gamergroupgeneral');
+
+	$scope.blogs = $firebaseArray(blogs);
+	$scope.featured = $firebaseArray(featured);
+	$scope.generals = $firebaseArray(generals);
+
+
 
 	ref = new Firebase("https://gameruw.firebaseio.com");
 	ref.onAuth(function(authData) {
@@ -192,6 +205,9 @@ myApp.config(function($stateProvider) {
 $(function() {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
+
+	
+
 
 	// $.get("https://disqus.com/api/3.0/users/listForums.json", {
 	// 	access_token: ACCESS_TOKEN,
