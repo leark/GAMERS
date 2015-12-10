@@ -114,6 +114,7 @@ myApp.config(function($stateProvider) {
 	var ACCESS_TOKEN = "d1a4145e953c4c4e9f0ee0c61c202486";
 	var API_KEY = "zFYDrRp7UkXfhX3xWuGaLQfi2T0hBjUeJLAszIKIC0RObnKclNc1yPkDGslOotqB";
 	var DISQUS_KEY = "E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F";
+	var SECRET_KEY = "pn6sboBzfjR73EczCcJuRizm4QGbrB7WJFdykUF1XeNksXqH1Dmp1esoz4LY1rmn";
 	
 	var THREAD_ID = $stateParams.threadId;
 
@@ -188,7 +189,7 @@ myApp.config(function($stateProvider) {
 			url: "https://disqus.com/api/3.0/posts/create.json",
 			method: "POST",
 			params: {
-				api_key: API_KEY,
+				api_key: SECRET_KEY,
 				message: post,
 				thread: id,
 				author_name: $scope.userName,
